@@ -14,6 +14,17 @@ h2 {
     color: inherit;
 }
 
+#guest-img_linea {
+    background: url('linea_flor.jpg') no-repeat center center/contain;
+    width: 100%;
+    height: 100px; /* Adjust height as needed */
+    /*margin: 10px 0;*/
+    opacity: 0.8;
+}
+
+
+
+
 /* --- GUEST FINDER STYLES (NEW TUXEDO IMAGE) --- */
 #guest-finder {
     display: flex; justify-content: center; align-items: center; height: 100vh;
@@ -315,7 +326,9 @@ section { padding: 80px 20px; }
 #countdown > div span { font-size: 1rem; color: #333; }
 
 .countdown-section {
-    background: url('flor_section.jpg') no-repeat left center/cover;
+    background: url('Ilustración botánica en acuarela.png') no-repeat center center/cover;
+    width: 100%;
+    height: 100%;        
 }
 
 .countdown-section h2 {
