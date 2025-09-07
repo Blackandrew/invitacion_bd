@@ -19,6 +19,7 @@ h2 {
     display: flex; justify-content: center; align-items: center; height: 100vh;
     /* THIS IS THE NEW IMAGE URL, INSPIRED BY YOUR EXAMPLE */
     background: url('https://images.pexels.com/photos/169190/pexels-photo-169190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+   
     position: relative; color: white; padding: 20px;
 }
 #guest-finder::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.4); }
@@ -38,8 +39,8 @@ h2 {
     max-width: 180px;
     width: 100%;
     height: auto;
-    margin-bottom: 30px;
-    padding: 15px;
+    margin-bottom: 15px; /* Reducido margen inferior */
+    padding: 10px; /* Reducido padding */
 }
 .finder-image {
     max-width: 200px;
@@ -102,6 +103,7 @@ h2 {
     
     .hero-content {
         width: 90%;
+       
         padding: 1.5rem;
     }
 }
@@ -163,6 +165,8 @@ h2 {
         justify-content: center; /* Centrado vertical */
         text-align: center;
         padding: 2rem 1rem; /* Espaciado uniforme */
+      
+      
     }
     
     .hero-content .logo-image {
@@ -283,10 +287,9 @@ section { padding: 80px 20px; }
 
 .countdown-section h2 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: inherit;
+    font-size: 2.5rem;
+    margin: -10px 0 5px 0; /* Reducido margen superior e inferior */
+    color: #333;
     min-height: 10vh;  
    
 }
@@ -347,17 +350,34 @@ section { padding: 80px 20px; }
 
 footer { padding: 20px; background-color: #333; color: white; font-family: 'Playfair Display', serif; }
 @media (max-width: 768px) { 
-    .hero-content h1 { 
+    .hero-content h1, .finder-content h1 { 
         font-size: 4rem; 
         letter-spacing: 2px;
-    } 
-    #countdown { font-size: 1.5rem; gap: 15px; } 
+        font-family: 'Great Vibes', cursive;
+        margin: 0 0 1rem 0;
+        text-align: center;
+    }
+    
+    .hero-content h1 .name, .finder-content h1 .name {
+        display: block;
+        line-height: 1;
+    }
+    
+    .hero-content h1 .ampersand, .finder-content h1 .ampersand {
+        font-family: 'Great Vibes', cursive;
+        font-size: 3.5rem;
+        margin: 0.5rem 0;
+        display: inline-block;
+    }
+    
     .logo-image {
         max-width: 120px;
         padding: 10px;
-    }
-    .finder-content h1 {
-        font-size: 2.8rem;
+    } 
+    
+    #countdown { 
+        font-size: 1.5rem; 
+        gap: 15px;
         letter-spacing: 1px;
     }
 }
