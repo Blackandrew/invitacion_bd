@@ -314,6 +314,10 @@ section { padding: 80px 20px; }
 #countdown > div { display: flex; flex-direction: column; }
 #countdown > div span { font-size: 1rem; color: #333; }
 
+.countdown-section {
+    background: url('flor_section.jpg') no-repeat left center/cover;
+}
+
 .countdown-section h2 {
     font-family: 'Allura',Allura;
     font-size: 2.5rem;
@@ -330,6 +334,12 @@ section { padding: 80px 20px; }
     margin: 10px 0;
     color: #333;
 }
+
+
+
+
+
+
 
 .countdown-section h3 {
     font-family: 'Playfair Display', serif;
