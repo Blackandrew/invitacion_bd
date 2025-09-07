@@ -154,17 +154,21 @@ h2 {
     position: relative;
     z-index: 1;
     background: rgba(255, 255, 255, 0.15); /* Más transparente */
-    border-radius: 16px;
+    /*border-radius: 16px;*/
+    border-top-left-radius: 106px;
+    border-top-right-radius: 106px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
     padding: 2.5rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px); /* Menor desenfoque */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    max-width: 90%;
-    width: 450px;
-    height: 550px;
+    border: 2px solid rgba(80, 98, 81, 0.2);
+    max-width: 85%;
+    width: 200px;
+    height: 450px;
     margin: 0 auto;
     overflow: hidden;
-    color: #333;
+    color: #394f3c;
     opacity: 0; /* Inicialmente invisible */
     animation: slideUp 0.8s ease-out forwards;
     animation-delay: 0.3s; /* Pequeño retraso para mejor efecto */
