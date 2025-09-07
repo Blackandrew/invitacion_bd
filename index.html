@@ -60,22 +60,32 @@
                 </h1>
 
             </div>
-
+            <div class="music-player">
+                <button id="playPauseBtn" class="music-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <audio id="bgMusic" loop>
+                    <source src="audio/tu_lo_tienen_todo.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </div>
         </header>
+        
 
         <main>
-            <!-- <section class="guest-welcome" style="background-color: green;">
-                <h2 id="guest-name">¡Bienvenido!</h2>
-                 style="background-color: rgb(172, 189, 172);
-                <p>Estamos muy emocionados de compartir nuestro día especial contigo.</p>
-                <p>Esta invitación es válida para <b id="guest-passes">1 persona</b>.</p>
+            <!-- <section class="guest-img_walcome">
+               
+               
+              
+               
             </section> -->
 
-            <section class="countdown-section">
+            <section class="countdown-section" >
 
                 <h2 id="guest-name">¡Bienvenido!</h2>
-                <p>Estamos muy emocionados de compartir nuestro día especial contigo.</p>
-                <p>Esta invitación es válida para <b id="guest-passes">1 persona</b>.</p>
+                
+                <p >Estamos muy emocionados de compartir nuestro día especial contigo.</p>
+                <p >Esta invitación es válida para <b id="guest-passes">1 persona</b>.</p>
                
                 <img src="logo.png" 
                 alt="Logo Marlon & Bertha" 
@@ -85,9 +95,17 @@
                 <h2 style="font-family: 'Montserrat';">NUESTRA BODA</h2>
                 <h3 style="font-family: 'Playfair+Display';">06|Dic|2025</h3>
 
+                
+
                 <div id="countdown"></div>
 
+
+
+
+                
+
             </section>
+          
 
             <section class="sponsors-section2" >
                 
@@ -158,5 +176,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="music.js"></script>
 </body>
 </html>
