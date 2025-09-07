@@ -93,6 +93,19 @@ h2 {
     opacity: 0.9;
 }
 
+/* Ocultar fondos de flores en pantallas pequeñas */
+@media (max-width: 768px) {
+    .hero_fondo_flores,
+    .hero_fondo_flores_derecha {
+        display: none;
+    }
+    
+    .hero-content {
+        width: 90%;
+        padding: 1.5rem;
+    }
+}
+
 /* Main Hero Section */
 .main-hero {
     height: 100vh;
@@ -124,20 +137,99 @@ h2 {
 }
 .hero-content { 
     position: relative;
-    z-index: 3; /* Aseguramos que esté por encima de los fondos */
-    background: rgba(255, 255, 255, 0.3); /* Fondo transparente */
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.3); /* 50% menos de opacidad */
     border-radius: 16px;
     padding: 2.5rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px); /* Ajuste de desenfoque */
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Borde más sutil */
     max-width: 90%;
     width: 450px;
     height: 550px;
     margin: 0 auto;
-   
+    overflow: hidden;
     transition: all 0.3s ease;
-    color: #333; /* Color de texto más oscuro para mejor legibilidad */
+    color: #333;
+}
+
+/* Mostrar imagen de fondo solo en móviles */
+@media (max-width: 767px) {
+    .hero-content {
+        background: rgba(255, 255, 255, 0.85) url('flores_inicio.jpg') no-repeat center center/cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centrado horizontal */
+        justify-content: center; /* Centrado vertical */
+        text-align: center;
+        padding: 2rem 1rem; /* Espaciado uniforme */
+    }
+    
+    .hero-content .logo-image {
+        margin: 0 auto 3rem; /* Centrado y espacio inferior */
+        max-width: 150px;
+        display: block;
+    }
+    
+    .hero-content h1 {
+        margin: -0.5rem 0 0; /* Margen negativo para subir el título */
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.hero-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.15);
+    z-index: 1;
+}
+
+.hero-content > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Animaciones para los nombres */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.hero-content h1 .name {
+    display: block;
+    line-height: 1;
+    opacity: 0;
+    animation: slideInRight 0.8s ease-out forwards;
+}
+
+.hero-content h1 .name:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.hero-content h1 .name:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.hero-content h1 .ampersand {
+    display: inline-block;
+    animation: fadeIn 0.8s ease-out 0.9s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 .hero-content:hover {
