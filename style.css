@@ -546,7 +546,7 @@ footer { padding: 20px; background-color: #333; color: white; font-family: 'Play
 
 .image-container img {
     width: 100%;
-    height: 800px;
+    height: 100%;
     object-fit: cover;
     display: block;
     transition: transform 0.5s ease;
@@ -633,7 +633,7 @@ footer { padding: 20px; background-color: #333; color: white; font-family: 'Play
 /* Mobile */
 @media (max-width: 640px) {
     .guest-slider {
-        min-height: 350px;
+        min-height: 400px;
         padding: 20px 0;
     }
     
@@ -643,8 +643,8 @@ footer { padding: 20px; background-color: #333; color: white; font-family: 'Play
     }
     
     .image-container {
-        flex: 0 0 85%;
-        height: 300px;
+        flex: 0 0 90%;
+        height: 380px;
         margin: 0 5px;
     }
     
