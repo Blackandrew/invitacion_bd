@@ -5,7 +5,24 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Quicksand:wght@400;500&display=swap');
 
-body { font-family: 'Quicksand', sans-serif; margin: 0; color: #333; background-color: #ffffff; text-align: center; }
+/* Base Styles */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body { 
+    font-family: 'Quicksand', sans-serif; 
+    margin: 0; 
+    color: #333; 
+    background-color: #ffffff; 
+    text-align: center;
+    position: relative;
+    min-height: 100vh;
+}
 h1 { font-family: 'Playfair Display', serif; }
 h2 { 
     font-family: 'Great Vibes'; 
@@ -165,52 +182,72 @@ h2 {
 .hero-content { 
     position: relative;
     z-index: 1;
-    background: rgba(255, 255, 255, 0.15); /* Más transparente */
-    /*border-radius: 16px;*/
+    background: rgba(255, 255, 255, 0.15);
     border-top-left-radius: 106px;
     border-top-right-radius: 106px;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
-    padding: 2.5rem;
+    padding: 1.5rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px); /* Menor desenfoque */
+    backdrop-filter: blur(5px);
     border: 2px solid rgba(80, 98, 81, 0.2);
-    max-width: 85%;
-    width: 220px;
-    height: 450px;
+    width: 90%;
+    max-width: 320px;
     margin: 0 auto;
     overflow: hidden;
     color: #394f3c;
-    opacity: 0; /* Inicialmente invisible */
+    opacity: 0;
     animation: slideUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-    animation-delay: 0.3s; /* Pequeño retraso para mejor efecto */
+    animation-delay: 0.3s;
     transform-origin: bottom center;
+    box-sizing: border-box;
 }
 
-/* Mostrar imagen de fondo solo en móviles */
+/* Mobile Styles */
 @media (max-width: 767px) {
     .hero-content {
-       /* background: rgba(255, 255, 255, 0.85) url('flores_inicio.jpg') no-repeat center center/cover;*/
+        padding: 1.5rem 1rem;
+        width: 85%;
+        margin: 0 auto;
         display: flex;
         flex-direction: column;
-        align-items: center; /* Centrado horizontal */
-        justify-content: center; /* Centrado vertical */
-        text-align: center;
-        padding: 2rem 1rem; /* Espaciado uniforme */
-        
-      
-    }
-    
-    .hero-content .logo-image {
-        margin: 0 auto 3rem; /* Centrado y espacio inferior */
-        max-width: 150px;
-        display: block;
+        align-items: center;
+        justify-content: center;
     }
     
     .hero-content h1 {
-        margin: -0.5rem 0 0; /* Margen negativo para subir el título */
-        width: 100%;
+        font-size: 2.8rem;
+        margin: -0.5rem 0 0;
         text-align: center;
+        width: 100%;
+    }
+    
+    .hero-content .logo-image {
+        max-width: 120px;
+        margin: 0 auto 1.5rem;
+        display: block;
+    }
+    
+    .main-hero {
+        padding: 20px 10px;
+        min-height: 100vh;
+        height: auto;
+    }
+    
+    .event-section, .info-section {
+        padding: 2rem 1rem;
+    }
+    
+    .event-content, .info-item {
+        padding: 1.5rem;
+    }
+    
+    /* Ensure images don't overflow */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
     }
 }
 
@@ -471,7 +508,6 @@ footer { padding: 20px; background-color: #333; color: white; font-family: 'Play
     width: 100%;
     min-height: 600px;
     padding: 60px 0;
-  
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -507,7 +543,7 @@ footer { padding: 20px; background-color: #333; color: white; font-family: 'Play
 
 .image-container img {
     width: 100%;
-    height: 100%;
+    height: 800px;
     object-fit: cover;
     display: block;
     transition: transform 0.5s ease;
