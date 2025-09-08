@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function getVisibleSlides() {
-        if (window.innerWidth <= 480) return 1;
-        if (window.innerWidth <= 768) return 2;
-        return 3;
+        if (window.innerWidth <= 640) return 1;  // Mobile: show 1 slide
+        if (window.innerWidth <= 1023) return 2; // Tablet: show 2 slides
+        return 3;  // Desktop: show 3 slides
     }
     
     // Next slide
@@ -61,23 +61,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // Touch event handlers
     function touchStart(e) {
         isDragging = true;
-        startPos = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+        startPos = e.type === 'mousedown' ? e.pageX : e.touches[0].clientX;
         slider.style.cursor = 'grabbing';
-        slider.style.transition = 'none';
+        slider.style.transition = 'transform 0.2s ease-out';
+        slider.style.willChange = 'transform';
     }
     
     function touchMove(e) {
         if (!isDragging) return;
-        const currentPosition = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+        const currentPosition = e.type === 'mousemove' ? e.pageX : e.touches[0].clientX;
         const diff = currentPosition - startPos;
         
-        // Prevent scrolling while swiping
+        // Prevent scrolling when swiping
         if (Math.abs(diff) > 5) {
             e.preventDefault();
+            e.stopPropagation();
         }
         
         currentTranslate = prevTranslate + diff;
         slider.style.transform = `translateX(${currentTranslate}px)`;
+        
+        // Add resistance effect
+        const maxTranslate = 0;
+        const minTranslate = -(slideCount - visibleSlides) * slideWidth;
+        
+        if (currentTranslate > maxTranslate + 50 || currentTranslate < minTranslate - 50) {
+            currentTranslate = prevTranslate + (diff * 0.3);
+        }
     }
     
     function touchEnd() {
@@ -100,15 +110,29 @@ document.addEventListener('DOMContentLoaded', function() {
     nextBtn.addEventListener('click', nextSlide);
     prevBtn.addEventListener('click', prevSlide);
     
-    // Touch events
+    // Mouse events for desktop
     slider.addEventListener('mousedown', touchStart);
+    window.addEventListener('mousemove', touchMove);
+    window.addEventListener('mouseup', touchEnd);
+    
+    // Touch events for mobile
     slider.addEventListener('touchstart', touchStart, { passive: true });
+    window.addEventListener('touchmove', touchMove, { passive: false });
+    window.addEventListener('touchend', touchEnd);
     
-    slider.addEventListener('mousemove', touchMove);
-    slider.addEventListener('touchmove', touchMove, { passive: false });
+    // Handle window resize
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            updateSlider();
+        }, 250);
+    });
     
-    slider.addEventListener('mouseup', touchEnd);
-    slider.addEventListener('touchend', touchEnd);
+    // Prevent context menu on slider
+    slider.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+    });
     slider.addEventListener('mouseleave', touchEnd);
     
     // Prevent image drag

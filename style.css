@@ -506,11 +506,12 @@ footer { padding: 20px; background-color: #333; color: white; font-family: 'Play
 .guest-slider {
     position: relative;
     width: 100%;
-    min-height: 600px;
-    padding: 60px 0;
+    min-height: 400px;
+    padding: 30px 0;
     overflow: hidden;
     display: flex;
     align-items: center;
+    margin: 0 auto;
 }
 
 .slider-container {
@@ -527,13 +528,15 @@ footer { padding: 20px; background-color: #333; color: white; font-family: 'Play
 }
 
 .image-container {
-    flex: 0 0 calc(100% - 30px);
-    min-width: 0;
-    /*border-radius: 10px;*/
+    position: relative;
+    flex: 0 0 90%;
+    height: 300px;
+    margin: 0 10px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 0 5px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    min-width: 280px;
 }
 
 .image-container:hover {
@@ -558,18 +561,20 @@ footer { padding: 20px; background-color: #333; color: white; font-family: 'Play
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 60px;
-    height: 60px;
-    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
     border: none;
+    border-radius: 50%;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 20px;
     color: #000;
     z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .slider-nav:hover {
@@ -586,15 +591,75 @@ footer { padding: 20px; background-color: #333; color: white; font-family: 'Play
 }
 
 /* Estilos responsivos */
-@media (min-width: 769px) {
+@media (min-width: 1024px) {
     .image-row {
         gap: 30px;
         padding: 0 30px;
+        justify-content: center;
     }
     
     .image-container {
         flex: 0 0 calc(33.333% - 20px);
         margin: 0;
+        height: 400px;
+    }
+    
+    .slider-nav {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 641px) and (max-width: 1023px) {
+    .image-row {
+        gap: 20px;
+        padding: 0 20px;
+    }
+    
+    .image-container {
+        flex: 0 0 calc(50% - 10px);
+        height: 350px;
+    }
+    
+    .slider-nav {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .guest-slider {
+        min-height: 350px;
+        padding: 20px 0;
+    }
+    
+    .image-row {
+        padding: 0 15px;
+        gap: 15px;
+    }
+    
+    .image-container {
+        flex: 0 0 85%;
+        height: 300px;
+        margin: 0 5px;
+    }
+    
+    .slider-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    
+    .prev-btn {
+        left: 5px;
+    }
+    
+    .next-btn {
+        right: 5px;
     }
 }
 
