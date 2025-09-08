@@ -109,7 +109,8 @@ h2 {
 /* Ocultar fondos de flores en pantallas pequeñas */
 @media (max-width: 768px) {
     .hero_fondo_flores,
-    .hero_fondo_flores_derecha {
+    .hero_fondo_flores_derecha,
+    #guest-img_linea {
         display: none;
     }
     
@@ -124,7 +125,7 @@ h2 {
 .main-hero {
     height: 100vh;
     min-height: 600px;
-    background: url('nosotros.jpeg') no-repeat center center;
+    background: url('nosotros_animado.jpeg') no-repeat center center;
     background-size: cover;
     background-color: #000;
     background-attachment: scroll; /* Cambiado de fixed a scroll */
@@ -309,16 +310,29 @@ h2 {
 
 section { padding: 80px 20px; }
 
-.guest-img_walcome {
-   
-    height: 300px;
-    width: 100%;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+
+
+
+
+
+
+
+
+
+
+.guest-img_walcome img {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
 }
 
-.guest-welcome { background: #f8f8f8; }
 #guest-name { color: #333; font-size: 2.5rem; }
 
 #countdown { display: flex; justify-content: center; gap: 20px; font-size: 2rem; color: #c5a47e; font-weight: 500; }
@@ -450,6 +464,167 @@ section { padding: 80px 20px; }
 .rsvp-button:hover { transform: scale(1.05); }
 
 footer { padding: 20px; background-color: #333; color: white; font-family: 'Playfair Display', serif; }
+
+/* Estilos para el slider */
+.guest-slider {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    padding: 60px 0;
+    background-color: #f9f5f0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-row {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 15px;
+    padding: 0 15px;
+    width: 100%;
+}
+
+.image-container {
+    flex: 0 0 calc(100% - 30px);
+    min-width: 0;
+    /*border-radius: 10px;*/
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 5px;
+}
+
+.image-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.05);
+}
+
+/* Botones de navegación */
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: #000;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.slider-nav:hover {
+   /* background-color: rgba(118, 145, 125, 0.2);*/
+    color: #000;
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+/* Estilos responsivos */
+@media (min-width: 769px) {
+    .image-row {
+        gap: 30px;
+        padding: 0 30px;
+    }
+    
+    .image-container {
+        flex: 0 0 calc(33.333% - 20px);
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 481px) {
+    .image-container {
+        flex: 0 0 calc(50% - 15px);
+    }
+    
+    .slider-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-nav {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+    
+    .prev-btn {
+        left: 5px;
+    }
+    
+    .next-btn {
+        right: 5px;
+    }
+    
+    .guest-slider {
+        padding: 30px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-nav {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+    
+    .prev-btn {
+        left: 5px;
+    }
+    
+    .next-btn {
+        right: 5px;
+    }
+    
+    .guest-slider {
+        padding: 30px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .image-container {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .image-container:last-child {
+        margin-bottom: 0;
+    }
+}
 @media (max-width: 768px) { 
     .hero-content h1, .finder-content h1 { 
         font-size: 4rem; 
