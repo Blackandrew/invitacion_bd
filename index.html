@@ -14,6 +14,10 @@
     <title>¡Boda! | Bertha & Marlon</title>
     <link rel="icon" type="image/jpeg" href="519.jpg">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/preloader.css">
+    <link rel="stylesheet" href="css/love-timeline.css">
+    <link rel="stylesheet" href="css/enhanced-music.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -81,24 +85,24 @@
 
 
 
-            <section class="countdown-section"  >
+            <section class="countdown-section fade-in-up">
               
-                 <div id="guest-bienvenido" > 
-                <h2 id="guest-name">¡Bienvenido!</h2>
+                 <div id="guest-bienvenido" class="stagger-parent"> 
+                <h2 id="guest-name" class="stagger-item">¡Bienvenido!</h2>
                 
-                <p >Estamos muy emocionados de compartir nuestro día especial contigo.</p>
-                <p >Esta invitación es válida para <b id="guest-passes">1 persona</b>.</p>
+                <p class="stagger-item">Estamos muy emocionados de compartir nuestro día especial contigo.</p>
+                <p class="stagger-item">Esta invitación es válida para <b id="guest-passes">1 persona</b>.</p>
                
                 <img src="logo.png" 
                 alt="Logo Marlon & Bertha" 
-                class="logo-image"
+                class="logo-image stagger-item float-animation"
                >
                
-                <h2 style="font-family: 'Montserrat';">NUESTRA BODA</h2>
-                <h3 style="font-family: 'Playfair+Display';">06|Dic|2025</h3>
+                <h2 class="stagger-item shimmer-text" style="font-family: 'Montserrat';">NUESTRA BODA</h2>
+                <h3 class="stagger-item" style="font-family: 'Playfair+Display';">06|Dic|2025</h3>
 
                 
-                <div id="countdown"></div>
+                <div id="countdown" class="stagger-item glow-effect"></div>
                 
 
                 <div id="guest-img_linea">
@@ -116,68 +120,32 @@
             </section>
           
             
-            <section class="sponsors-section2" >
+            <section class="sponsors-section2 fade-in-up">
                 
-                <p class="center-text">"La historia comienza cuando dos personas que no soñaban, conocerse, terminan encontrandoce en el instante
-                    menos esperado, pero en el momento indicado"
+                <p class="center-text typewriter">"La historia comienza cuando dos personas que no soñaban conocerse, terminan encontrándose en el instante menos esperado, pero en el momento indicado"
                 </p>
                
                 
             </section>
 
-             <section class="guest-slider">
-                <button class="slider-nav prev-btn" aria-label="Anterior">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <div class="slider-container">
-                    <div class="image-row">
-                        <div class="image-container">
-                            <img src="nosotros.jpeg" alt="Bertha y Marlon en la catedral">
-                        </div>
-                        <div class="image-container">
-                            <img src="foto_principal.jpeg" alt="Bertha y Marlon">
-                        </div>
-                        <div class="image-container">
-                            <img src="boda1.JPG" alt="Bertha y Marlon en su boda">
-                        </div>
-                        <div class="image-container">
-                            <img src="boda1.JPG" alt="Bertha y Marlon en su boda">
-                        </div>
-                        <div class="image-container">
-                            <img src="manos_catedral.png" alt="Bertha y Marlon en la catedral">
-                        </div>
-                  
-                 
-                  
-                </div>
-                <button class="slider-nav next-btn" aria-label="Siguiente">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </section> 
-            
-        <script src="js/slider.js"></script> 
-              
-          
-          
-          
 
-            <section class="event-section ceremony">
+            <section class="event-section ceremony fade-in-left">
                 <div class="event-content">
-                    <i class="fas fa-church event-icon"></i>
+                    <i class="fas fa-church event-icon bounce-icon"></i>
                     <h2>Ceremonia</h2>
                     <p><strong>Hora:</strong> 4:00 PM</p>
                     <p><strong>Lugar:</strong> Parroquia Corpus Christi</p>
-                    <a href="https://maps.app.goo.gl/q19asu1g2SV6t51v9" target="_blank" class="map-button">Cómo Llegar</a>
+                    <a href="https://maps.app.goo.gl/q19asu1g2SV6t51v9" target="_blank" class="map-button enhanced-hover pulse-animation">Cómo Llegar</a>
                 </div>
             </section>
 
-            <section class="event-section reception">
+            <section class="event-section reception fade-in-right">
                 <div class="event-content">
-                    <i class="fas fa-champagne-glasses event-icon"></i>
+                    <i class="fas fa-champagne-glasses event-icon bounce-icon"></i>
                     <h2>Recepción</h2>
                     <p><strong>Hora:</strong> 6:30 PM</p>
                     <p><strong>Lugar:</strong> El Rancho Salón y Eventos</p>
-                    <a href="https://maps.app.goo.gl/ykYPvqRAXCMoCiHm9" target="_blank" class="map-button">Cómo Llegar</a>
+                    <a href="https://maps.app.goo.gl/ykYPvqRAXCMoCiHm9" target="_blank" class="map-button enhanced-hover pulse-animation">Cómo Llegar</a>
                 </div>
             </section>
             
@@ -208,11 +176,11 @@
                 </div>
             </section>
 
-            <section class="rsvp-section">
+            <section class="rsvp-section fade-in-up">
                 <h2>Confirmar Asistencia</h2>
                 <p>Por favor confirma tu asistencia vía WhatsApp.</p>
                 <a id="whatsapp-link" 
-                class="rsvp-button" 
+                class="rsvp-button enhanced-hover pulse-animation" 
                 
                 target="_blank">Confirmar por WhatsApp
             </a>
@@ -224,8 +192,14 @@
         </footer>
     </div>
 
+    <!-- Core scripts -->
+    <script src="js/preloader.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/love-timeline.js"></script>
+    <script src="js/enhanced-music.js"></script>
+    
+    <!-- Original scripts -->
     <script src="script.js"></script>
-    <script src="music.js"></script>
-    <script src="js/slider.js"></script>
 </body>
 </html>
