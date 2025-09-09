@@ -144,7 +144,7 @@
 
 .ampersand {
     font-size: 2.5rem;
-    color: #8B9A7A;
+    color: #f5f7fa;;
     opacity: 0;
     animation: ampersandFade 1s ease-out forwards 2.5s;
 }
@@ -380,7 +380,7 @@ body.loaded .entrance-animation {
     }
     
     .ampersand {
-        color: #A8B898;
+        color: #ffffff; /* Match the name class color in mobile view */
     }
 }
 
