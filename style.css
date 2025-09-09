@@ -17,8 +17,8 @@ html, body {
 body { 
     font-family: 'Quicksand', sans-serif; 
     margin: 0; 
-    color: #333; 
-    background-color: #ffffff; 
+    color: #6B7C59; 
+    background-color: #F8F7F5; 
     text-align: center;
     position: relative;
     min-height: 100vh;
@@ -82,10 +82,10 @@ h2 {
 #guest-search-input { width: 90%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; margin-top: 20px; font-size: 1rem; }
 #search-button {
     width: 95%; padding: 12px; margin-top: 15px; border: none; border-radius: 5px;
-    background-color: #c5a47e; color: white; font-size: 1.1rem; font-weight: bold;
+    background-color: #8B9A7A; color: white; font-size: 1.1rem; font-weight: bold;
     cursor: pointer; transition: background-color 0.3s;
 }
-#search-button:hover { background-color: #b39169; }
+#search-button:hover { background-color: #6B7C59; }
 #error-message { margin-top: 15px; color: #ffdddd; font-weight: 500; min-height: 20px; }
 
 
@@ -224,12 +224,12 @@ h2 {
     padding: 1.5rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
-    border: 2px solid rgba(80, 98, 81, 0.2);
+    border: 2px solid rgba(107, 124, 89, 0.2);
     width: 90%;
     max-width: 320px;
     margin: 0 auto;
     overflow: hidden;
-    color: #394f3c;
+    color: #6B7C59;
     opacity: 0;
     animation: slideUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     animation-delay: 0.3s;
@@ -404,11 +404,11 @@ section { padding: 80px 20px; }
     object-fit: contain;
 }
 
-#guest-name { color: #333; font-size: 2.5rem; }
+#guest-name { color: #6B7C59; font-size: 2.5rem; }
 
-#countdown { display: flex; justify-content: center; gap: 20px; font-size: 2rem; color: #c5a47e; font-weight: 500; }
+#countdown { display: flex; justify-content: center; gap: 20px; font-size: 2rem; color: #8B9A7A; font-weight: 500; }
 #countdown > div { display: flex; flex-direction: column; }
-#countdown > div span { font-size: 1rem; color: #333; }
+#countdown > div span { font-size: 1rem; color: #6B7C59; }
 
 .countdown-section {
     background: url('Ilustración botánica en acuarela.png') no-repeat center center/cover;
@@ -420,7 +420,7 @@ section { padding: 80px 20px; }
     font-family: 'Allura',Allura;
     font-size: 2.5rem;
     margin: -10px 0 5px 0; /* Reducido margen superior e inferior */
-    color: grey;
+    color: #8B9A7A;
     text-transform: uppercase;
     letter-spacing: 1px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
@@ -430,7 +430,7 @@ section { padding: 80px 20px; }
     font-family: 'Allura',Allura;
     font-size: 1.5rem;
     margin: 10px 0;
-    color: #333;
+    color: #6B7C59;
 }
 
 
@@ -444,7 +444,7 @@ section { padding: 80px 20px; }
     font-size: 1.8rem;
     font-weight: 400;
     margin-top: 10px;
-    color: #333;
+    color: #6B7C59;
     letter-spacing: 1px;
    
 }
@@ -461,8 +461,8 @@ section { padding: 80px 20px; }
     height: 50px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.8);
-    border: 2px solid #394f3c;
-    color: #394f3c;
+    border: 2px solid #8B9A7A;
+    color: #8B9A7A;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -473,18 +473,18 @@ section { padding: 80px 20px; }
 }
 
 .music-btn:hover {
-    background-color: #394f3c;
+    background-color: #8B9A7A;
     color: white;
     transform: scale(1.1);
 }
 
 .music-btn.playing {
-    background-color: #394f3c;
+    background-color: #8B9A7A;
     color: white;
 }
 
 .guest-img_walcome{
-    background-color: #394f3c;
+    background-color: #8B9A7A;
 }
 
 
@@ -497,13 +497,13 @@ section { padding: 80px 20px; }
     min-height: 10vh;         /* Ocupa toda la altura de la pantalla */
     text-align: center;        /* Centra el texto dentro del párrafo */
     padding: 20px;             /* Espaciado interno */
-    background-color: #fdfdfd; /* Fondo claro (ajústalo si quieres) */
+    background-color: #F8F7F5; /* Fondo claro (ajústalo si quieres) */
   }
 
 .sponsors-section2 p {
     font-family: "Playfair Display", serif; /* Elegante */
     font-size: 1.5rem;
-    color: #444;
+    color: #6B7C59;
     max-width: 800px; /* Limita el ancho del texto */
     line-height: 1.6;
    
@@ -612,16 +612,16 @@ section { padding: 80px 20px; }
 .sponsor-name { font-style: italic; font-size: 1.2rem; margin-top: 10px; }
 .info-section { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
 .info-item { max-width: 300px; }
-.info-icon { font-size: 2.5rem; color: #6e7c6b; margin-bottom: 15px; }
+.info-icon { font-size: 2.5rem; color: #8B9A7A; margin-bottom: 15px; }
 .dress-code { font-weight: bold; font-size: 1.2rem; }
-.info-link { text-decoration: none; font-weight: 500; color: #c5a47e; border-bottom: 2px solid #c5a47e; padding-bottom: 3px; }
+.info-link { text-decoration: none; font-weight: 500; color: #8B9A7A; border-bottom: 2px solid #8B9A7A; padding-bottom: 3px; }
 
-.rsvp-section { background: #c5a47e; color: white; }
+.rsvp-section { background: #8B9A7A; color: white; }
 .rsvp-section h2 { color: white; }
 .rsvp-button { display: inline-block; margin-top: 20px; padding: 15px 40px; background: white; color: #333; text-decoration: none; font-weight: bold; font-size: 1.1rem; border-radius: 5px; transition: transform 0.3s; }
 .rsvp-button:hover { transform: scale(1.05); }
 
-footer { padding: 20px; background-color: #333; color: white; font-family: 'Playfair Display', serif; }
+footer { padding: 20px; background-color: #6B7C59; color: white; font-family: 'Playfair Display', serif; }
 
 /* Estilos para el slider */
 .guest-slider {
@@ -892,8 +892,8 @@ footer { padding: 20px; background-color: #333; color: white; font-family: 'Play
 
 /* --- Estilos para los Detalles Bancarios --- */
 .bank-details {
-    background-color: #f8f8f8;
-    border-left: 3px solid #808000; /* Cambiado a verde olivo */
+    background-color: #E8E6E0;
+    border-left: 3px solid #8B9A7A; /* Cambiado a verde olivo */
     padding: 15px;
     margin: 20px auto;
     text-align: center;

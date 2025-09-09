@@ -38,7 +38,7 @@
     width: 30px;
     height: 30px;
     border: none;
-    background: linear-gradient(135deg, #c5a47e, #ffd700);
+    background: linear-gradient(135deg, #8B9A7A, #D4C79B);
     border-radius: 50%;
     color: white;
     cursor: pointer;
@@ -52,7 +52,7 @@
 
 .toggle-player-btn:hover {
     transform: scale(1.1);
-    box-shadow: 0 5px 15px rgba(197, 164, 126, 0.4);
+    box-shadow: 0 5px 15px rgba(139, 154, 122, 0.4);
 }
 
 @keyframes musicButtonPulse {
@@ -124,8 +124,8 @@
     height: 40px;
     border: none;
     border-radius: 50%;
-    background: rgba(197, 164, 126, 0.1);
-    color: #c5a47e;
+    background: rgba(139, 154, 122, 0.1);
+    color: #8B9A7A;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -137,19 +137,19 @@
 .player-controls .play-pause {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #c5a47e, #ffd700);
+    background: linear-gradient(135deg, #8B9A7A, #D4C79B);
     color: white;
     font-size: 1.1rem;
 }
 
 .player-controls button:hover {
     transform: scale(1.1);
-    background: #c5a47e;
+    background: #8B9A7A;
     color: white;
 }
 
 .player-controls .play-pause:hover {
-    background: linear-gradient(135deg, #b39169, #e6c200);
+    background: linear-gradient(135deg, #6B7C59, #C8C4B8);
 }
 
 /* Progress Container */
@@ -165,7 +165,7 @@
 .progress-bar {
     flex: 1;
     height: 6px;
-    background: rgba(197, 164, 126, 0.2);
+    background: rgba(139, 154, 122, 0.2);
     border-radius: 3px;
     position: relative;
     cursor: pointer;
@@ -173,7 +173,7 @@
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #c5a47e, #ffd700);
+    background: linear-gradient(90deg, #8B9A7A, #D4C79B);
     border-radius: 3px;
     width: 0%;
     transition: width 0.1s ease;
@@ -186,7 +186,7 @@
     width: 12px;
     height: 12px;
     background: white;
-    border: 2px solid #c5a47e;
+    border: 2px solid #8B9A7A;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
@@ -207,14 +207,14 @@
 }
 
 .volume-container i {
-    color: #c5a47e;
+    color: #8B9A7A;
     font-size: 0.9rem;
 }
 
 .volume-slider {
     flex: 1;
     height: 4px;
-    background: rgba(197, 164, 126, 0.2);
+    background: rgba(139, 154, 122, 0.2);
     border-radius: 2px;
     outline: none;
     -webkit-appearance: none;
@@ -224,7 +224,7 @@
     -webkit-appearance: none;
     width: 12px;
     height: 12px;
-    background: #c5a47e;
+    background: #8B9A7A;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -232,7 +232,7 @@
 .volume-slider::-moz-range-thumb {
     width: 12px;
     height: 12px;
-    background: #c5a47e;
+    background: #8B9A7A;
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -246,17 +246,17 @@
 .playlist-toggle {
     width: 100%;
     padding: 8px;
-    border: 1px solid rgba(197, 164, 126, 0.3);
+    border: 1px solid rgba(139, 154, 122, 0.3);
     border-radius: 8px;
     background: transparent;
-    color: #c5a47e;
+    color: #8B9A7A;
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 0.9rem;
 }
 
 .playlist-toggle:hover {
-    background: rgba(197, 164, 126, 0.1);
+    background: rgba(139, 154, 122, 0.1);
 }
 
 .playlist {
@@ -296,11 +296,11 @@
 }
 
 .playlist-item:hover {
-    background: rgba(197, 164, 126, 0.1);
+    background: rgba(139, 154, 122, 0.1);
 }
 
 .playlist-item.active {
-    background: rgba(197, 164, 126, 0.2);
+    background: rgba(139, 154, 122, 0.2);
 }
 
 .track-number {

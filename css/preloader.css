@@ -39,7 +39,7 @@
     left: 50%;
     width: 20px;
     height: 20px;
-    background: radial-gradient(circle, #ffd700, #c5a47e);
+    background: radial-gradient(circle, #D4C79B, #8B9A7A);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
@@ -121,7 +121,7 @@
     font-family: 'Great Vibes', cursive;
     font-size: 3rem;
     margin: 0 0 15px 0;
-    color: #333;
+    color: #6B7C59;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -144,7 +144,7 @@
 
 .ampersand {
     font-size: 2.5rem;
-    color: #c5a47e;
+    color: #8B9A7A;
     opacity: 0;
     animation: ampersandFade 1s ease-out forwards 2.5s;
 }
@@ -174,7 +174,7 @@
 .loading-message {
     font-family: 'Quicksand', sans-serif;
     font-size: 1.1rem;
-    color: #666;
+    color: #A8B898;
     margin: 0;
     transition: opacity 0.3s ease;
 }
@@ -197,7 +197,7 @@
 .progress-fill {
     height: 100%;
     width: 0%;
-    background: linear-gradient(90deg, #ff6b6b, #feca57);
+    background: linear-gradient(90deg, #8B9A7A, #D4C79B);
     border-radius: 3px;
     transition: width 0.3s ease;
     position: relative;
@@ -228,7 +228,7 @@
 .progress-text {
     font-family: 'Quicksand', sans-serif;
     font-size: 0.9rem;
-    color: #666;
+    color: #A8B898;
     font-weight: 500;
 }
 
@@ -380,7 +380,7 @@ body.loaded .entrance-animation {
     }
     
     .ampersand {
-        color: #666;
+        color: #A8B898;
     }
 }
 
