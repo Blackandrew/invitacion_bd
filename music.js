@@ -6,12 +6,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Try to play music on user interaction (required by most browsers)
     function enableAudio() {
         if (music.paused) {
-            const playPromise = music.play();
-            
-            if (playPromise !== undefined) {
-                playPromise.catch(error => {
-                    console.log("Auto-play was prevented. User interaction required.");
-                });
+            // Check if audio can be loaded
+            if (music.readyState >= 2) {
+                const playPromise = music.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.log("Auto-play was prevented. User interaction required:", error);
+                    });
+                }
+            } else {
+                console.log("Audio not ready yet. Loading...");
+                music.load(); // Force reload
             }
         }
     }
@@ -19,16 +25,30 @@ document.addEventListener('DOMContentLoaded', function() {
     // Toggle play/pause
     function togglePlayPause() {
         if (music.paused) {
-            const playPromise = music.play();
-            
-            if (playPromise !== undefined) {
-                playPromise.then(() => {
-                    playIcon.classList.remove('fa-play');
-                    playIcon.classList.add('fa-pause');
-                    playPauseBtn.classList.add('playing');
-                }).catch(error => {
-                    console.log("Play was prevented.");
-                });
+            // Force load if not ready
+            if (music.readyState < 2) {
+                music.load();
+                music.addEventListener('canplay', function() {
+                    music.play().then(() => {
+                        playIcon.classList.remove('fa-play');
+                        playIcon.classList.add('fa-pause');
+                        playPauseBtn.classList.add('playing');
+                    }).catch(error => {
+                        console.log("Play was prevented:", error);
+                    });
+                }, { once: true });
+            } else {
+                const playPromise = music.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        playIcon.classList.remove('fa-play');
+                        playIcon.classList.add('fa-pause');
+                        playPauseBtn.classList.add('playing');
+                    }).catch(error => {
+                        console.log("Play was prevented:", error);
+                    });
+                }
             }
         } else {
             music.pause();
@@ -52,5 +72,27 @@ document.addEventListener('DOMContentLoaded', function() {
         playIcon.classList.remove('fa-pause');
         playIcon.classList.add('fa-play');
         playPauseBtn.classList.remove('playing');
+    });
+    
+    // Handle audio errors
+    music.addEventListener('error', function(e) {
+        console.log("Audio error:", e);
+        console.log("Error details:", music.error);
+        playIcon.classList.remove('fa-pause');
+        playIcon.classList.add('fa-play');
+        playPauseBtn.classList.remove('playing');
+    });
+    
+    // Handle loading events
+    music.addEventListener('loadstart', function() {
+        console.log("Started loading audio");
+    });
+    
+    music.addEventListener('canplay', function() {
+        console.log("Audio can start playing");
+    });
+    
+    music.addEventListener('loadeddata', function() {
+        console.log("Audio data loaded");
     });
 });

@@ -3,9 +3,9 @@ class EnhancedMusicPlayer {
     constructor() {
         this.playlist = [
             {
-                title: 'Wildess',
+                title: 'Wildes',
                 artist: 'Artista Romántico',
-                src: 'https://raw.githubusercontent.com/Blackandrew/invitacion_bd/main/audio/Wildess.mp3'
+                src: 'audio/Wildes.mp3'
             },
             {
                 title: 'Tu Lo Tienes Todo',
@@ -222,8 +222,8 @@ class EnhancedMusicPlayer {
                 const barHeight = (this.dataArray[i] / 255) * this.canvas.height * 0.8;
                 
                 const gradient = this.ctx.createLinearGradient(0, this.canvas.height, 0, this.canvas.height - barHeight);
-                gradient.addColorStop(0, '#c5a47e');
-                gradient.addColorStop(1, '#ffd700');
+                gradient.addColorStop(0, '#8B9A7A');
+                gradient.addColorStop(1, '#D4C79B');
                 
                 this.ctx.fillStyle = gradient;
                 this.ctx.fillRect(x, this.canvas.height - barHeight, barWidth, barHeight);
@@ -244,7 +244,7 @@ class EnhancedMusicPlayer {
         for (let i = 0; i < barCount; i++) {
             const barHeight = Math.random() * 20 + 5;
             
-            this.ctx.fillStyle = `rgba(197, 164, 126, ${0.3 + Math.random() * 0.4})`;
+            this.ctx.fillStyle = `rgba(139, 154, 122, ${0.3 + Math.random() * 0.4})`;
             this.ctx.fillRect(i * barWidth, this.canvas.height - barHeight, barWidth - 1, barHeight);
         }
     }
