@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function createHeart(container) {
         const heart = document.createElement('div');
         heart.className = 'floating-heart';
-        heart.innerHTML = '💖';
+        heart.innerHTML = '&#127807';
         heart.style.left = Math.random() * 100 + '%';
         heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
         container.appendChild(heart);
