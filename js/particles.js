@@ -248,11 +248,12 @@ class BackgroundParticles {
 document.addEventListener('DOMContentLoaded', () => {
     // Add a delay to ensure the page is fully loaded
     setTimeout(() => {
-        new FlowerPetals();
+        // Completely commented out to remove all particles
+        // new FlowerPetals();
         
         // Only initialize background particles on desktop for performance
-        if (window.innerWidth > 768) {
-            new BackgroundParticles();
-        }
+        // if (window.innerWidth > 768) {
+        //     new BackgroundParticles();
+        // }
     }, 1000);
 });

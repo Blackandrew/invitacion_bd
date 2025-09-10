@@ -18,15 +18,7 @@ class WeddingPreloader {
         this.preloader.className = 'wedding-preloader';
         this.preloader.innerHTML = `
             <div class="preloader-content">
-                <div class="flower-animation">
-                    <div class="flower-center"></div>
-                    <div class="petal petal-1"></div>
-                    <div class="petal petal-2"></div>
-                    <div class="petal petal-3"></div>
-                    <div class="petal petal-4"></div>
-                    <div class="petal petal-5"></div>
-                    <div class="petal petal-6"></div>
-                </div>
+                <!-- Removed flower animation -->
                 
                 <div class="loading-text">
                     <h2 class="couple-names">
@@ -44,12 +36,7 @@ class WeddingPreloader {
                     <span class="progress-text">0%</span>
                 </div>
                 
-                <div class="floating-hearts">
-                    <div class="heart heart-1">💕</div>
-                    <div class="heart heart-2">💖</div>
-                    <div class="heart heart-3">💗</div>
-                    <div class="heart heart-4">💝</div>
-                </div>
+                <!-- Removed floating hearts -->
             </div>
         `;
         

@@ -56,30 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Hearts floating animation
-    function createFloatingHearts() {
-        const heartsContainer = document.createElement('div');
-        heartsContainer.className = 'floating-hearts-container';
-        document.body.appendChild(heartsContainer);
-        
-        setInterval(() => {
-            createHeart(heartsContainer);
-        }, 3000);
-    }
-    
-    function createHeart(container) {
-        const heart = document.createElement('div');
-        heart.className = 'floating-heart';
-        heart.innerHTML = '&#127807';
-        heart.style.left = Math.random() * 100 + '%';
-        heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
-        container.appendChild(heart);
-        
-        setTimeout(() => {
-            heart.remove();
-        }, 5000);
-    }
-    
     // Typewriter effect for quotes
     function initTypewriterEffect() {
         const typewriterElements = document.querySelectorAll('.typewriter');
@@ -107,29 +83,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Magical sparkle effect
-    function createSparkleEffect(element) {
-        const sparkle = document.createElement('div');
-        sparkle.className = 'sparkle';
-        sparkle.style.left = Math.random() * element.offsetWidth + 'px';
-        sparkle.style.top = Math.random() * element.offsetHeight + 'px';
-        element.appendChild(sparkle);
-        
-        setTimeout(() => {
-            sparkle.remove();
-        }, 1000);
-    }
-    
-    // Add sparkle effect to hero content
-    function initSparkleEffect() {
-        const heroContent = document.querySelector('.hero-content');
-        if (heroContent) {
-            setInterval(() => {
-                createSparkleEffect(heroContent);
-            }, 2000);
-        }
-    }
-    
     // Smooth scroll for navigation links
     function initSmoothScroll() {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -149,8 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all animations
     initParallax();
     initFloatingElements();
-    createFloatingHearts();
-    initSparkleEffect();
+    // initSparkleEffect(); // Commented out to remove sparkle effect
     initSmoothScroll();
     
     // Delay typewriter effect until elements are visible
