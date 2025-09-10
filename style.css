@@ -610,8 +610,8 @@ section { padding: 80px 20px; }
 
 .sponsors-section { background: #f8f8f8; }
 .sponsor-name { font-style: italic; font-size: 1.2rem; margin-top: 10px; }
-.info-section { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
-.info-item { max-width: 300px; }
+.info-section { display: flex; flex-direction: column; align-items: center; gap: 40px; }
+.info-item { max-width: 500px; width: 100%; text-align: center; }
 .info-icon { font-size: 2.5rem; color: #8B9A7A; margin-bottom: 15px; }
 .dress-code { font-weight: bold; font-size: 1.2rem; }
 .info-link { text-decoration: none; font-weight: 500; color: #8B9A7A; border-bottom: 2px solid #8B9A7A; padding-bottom: 3px; }
