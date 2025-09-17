@@ -46,10 +46,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Rellenar detalles específicos del invitado Y CREAR EL ENLACE DE WHATSAPP
     const personalizeInvitation = (guest) => {
-        // --- Texto de bienvenida (sin cambios) ---
+        // --- Texto de bienvenida ---
         document.getElementById('guest-name').textContent = `Estimado/a ${guest.name}`;
+        
+        // Mostrar el párrafo de invitados solo si passes es mayor a 0
+        const passesParagraph = document.querySelector('p:has(#guest-passes)');
+        if (guest.passes === 0) {
+            passesParagraph.style.display = 'none';
+        } else {
+            passesParagraph.style.display = 'block';
+            const passesText = guest.passes > 1 ? `${guest.passes} personas` : `1 persona`;
+            document.getElementById('guest-passes').textContent = passesText;
+        }
+        
+        // Asegurarse de que el mensaje de WhatsApp use el valor correcto
         const passesText = guest.passes > 1 ? `${guest.passes} personas` : `1 persona`;
-        document.getElementById('guest-passes').textContent = passesText;
+        
+        document.getElementById('guest-mesa').textContent = guest.mesa;
 
         // --- ¡NUEVA LÓGICA PARA WHATSAPP! ---
         const whatsAppButton = document.getElementById('whatsapp-link');

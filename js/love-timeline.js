@@ -3,7 +3,7 @@ class LoveTimeline {
     constructor() {
         this.timelineData = [
             {
-                year: '2019',
+                year: '2015',
                 title: 'Nuestro Primer Encuentro',
                 description: 'El destino nos unió en el momento perfecto, cuando menos lo esperábamos.',
                 icon: '💫',
@@ -11,7 +11,7 @@ class LoveTimeline {
                 side: 'left'
             },
             {
-                year: '2020',
+                year: '2021',
                 title: 'Primera Cita',
                 description: 'Una velada mágica que marcó el inicio de nuestra hermosa historia de amor.',
                 icon: '❤️',
@@ -19,20 +19,12 @@ class LoveTimeline {
                 side: 'right'
             },
             {
-                year: '2021',
+                year: '2022',
                 title: 'Oficialmente Novios',
                 description: 'Decidimos caminar juntos hacia el futuro, unidos por el amor verdadero.',
-                icon: '💕',
+                icon: '💍',
                 image: 'boda1.JPG',
                 side: 'left'
-            },
-            {
-                year: '2023',
-                title: 'La Propuesta',
-                description: 'El momento más especial: cuando decidimos comprometernos para toda la vida.',
-                icon: '💍',
-                image: 'manos_catedral.png',
-                side: 'right'
             },
             {
                 year: '2025',
@@ -40,7 +32,7 @@ class LoveTimeline {
                 description: '¡El día que tanto hemos esperado! Celebraremos nuestro amor eterno.',
                 icon: '💒',
                 image: 'santisimoo.png',
-                side: 'left',
+                side: 'right',
                 isSpecial: true
             }
         ];
@@ -59,6 +51,7 @@ class LoveTimeline {
         const timelineSection = document.createElement('section');
         timelineSection.className = 'love-timeline-section fade-in-up';
         timelineSection.innerHTML = `
+          
             <div class="timeline-header">
                 <h2 class="section-title shimmer-text">Nuestra Historia de Amor</h2>
                 <p class="section-subtitle fade-in-up">Cada momento nos ha llevado hasta aquí</p>
