@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Parallax effect for hero section
-    function initParallax() {
+   /* function initParallax() {
         const heroSection = document.querySelector('.hero-section');
         if (!heroSection) return;
         
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const rate = scrolled * -0.5;
             heroSection.style.transform = `translateY(${rate}px)`;
         });
-    }
+    }*/
     
     // Floating animation for decorative elements
     function initFloatingElements() {
