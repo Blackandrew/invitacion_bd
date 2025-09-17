@@ -110,6 +110,18 @@ h2 {
     box-sizing: border-box;
     margin: 0;
     position: relative;
+    height: 1000px;
+}
+
+/* Ocultar arbol1 y arbol2 en móviles */
+@media (max-width: 768px) {
+    #arbol3
+     {
+        display: none;
+    }
+    .guest-divison {
+        height: 500px;
+    }
 }
 
 /* Gradient overlay at the bottom of guest-division */
