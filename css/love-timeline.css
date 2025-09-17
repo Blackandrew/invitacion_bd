@@ -46,8 +46,8 @@
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 0;
-   
+    padding: 80px 0;
+    min-height: 200vh; /* Aumentado aún más para dar más espacio vertical */
 }
 
 .timeline-line {
@@ -78,7 +78,10 @@
 /* Timeline Items */
 .timeline-item {
     position: relative;
-    margin: 60px 0;
+    margin: 150px 0; /* Aumentado aún más el margen vertical */
+    min-height: 600px; /* Aumentada aún más la altura mínima para cada item */
+    display: flex;
+    align-items: center;
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -160,12 +163,14 @@
 /* Timeline Cards */
 .timeline-card {
     background: white;
-    border-radius: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    position: relative;
-    max-width: 400px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    height: 100%;
+    min-height: 550px; /* Aumentada aún más la altura mínima para las tarjetas */
+    display: flex;
+    flex-direction: column;
 }
 
 .timeline-card.hovered {
@@ -184,9 +189,11 @@
 /* Timeline Images */
 .timeline-image {
     position: relative;
-    height: 200px;
+    height: 400px; /* Aumentada aún más la altura de la imagen */
     overflow: hidden;
     cursor: pointer;
+    flex-shrink: 0; /* Evita que la imagen se encoja */
+    margin-bottom: 20px; /* Espacio adicional debajo de la imagen */
 }
 
 .timeline-image img {
@@ -396,8 +403,43 @@
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* Mobile Responsiveness */
+/* Ajustes para imágenes en móviles */
 @media (max-width: 768px) {
+    .timeline-item {
+        min-height: auto; /* Altura automática para mejor adaptación */
+        margin: 60px 0;
+        padding: 15px 0;
+    }
+    
+    .timeline-card {
+        min-height: auto; /* Altura automática */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .timeline-image {
+        height: 90vh; /* Aumentado a 80% del viewport */
+        min-height: 450px; /* Aumentada altura mínima */
+        max-height: 650px; /* Aumentada altura máxima */
+        margin: 0 -15px 15px -15px;
+        width: calc(100% + 30px);
+        border-radius: 0;
+        object-fit: cover; /* Asegura que la imagen cubra el espacio manteniendo proporciones */
+        object-position: center; /* Centra la imagen */
+    }
+    
+    .timeline-text {
+        padding: 20px 15px;
+    }
+    
+    .timeline-title {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+    
+    .timeline-description {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
     .love-timeline-section {
         padding: 60px 15px;
     }
@@ -474,7 +516,15 @@
 
 @media (max-width: 480px) {
     .timeline-item {
-        margin: 40px 0;
+        margin: 30px 0;
+    }
+    
+    .timeline-image {
+        height: 70vh; /* Aumentado a 70% del viewport */
+        min-height: 350px; /* Aumentada altura mínima */
+        max-height: 500px; /* Aumentada altura máxima */
+        object-fit: cover;
+        object-position: center;
     }
     
     .timeline-item.left .timeline-content,

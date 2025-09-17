@@ -7,15 +7,15 @@ class LoveTimeline {
                 title: 'Nuestro Primer Encuentro',
                 description: 'El destino nos unió en el momento perfecto, cuando menos lo esperábamos.',
                 icon: '💫',
-                image: 'foto_principal.jpeg',
+                image: './imagen_timeline/primer_encuentro.jpg',
                 side: 'left'
             },
             {
                 year: '2021',
                 title: 'Primera Cita',
-                description: 'Una velada mágica que marcó el inicio de nuestra hermosa historia de amor.',
+                description: 'Una tarde mágica que marcó el inicio de nuestra hermosa historia de amor.',
                 icon: '❤️',
-                image: 'nosotros.jpeg',
+                image: './imagen_timeline/primer_cita2.jpg',
                 side: 'right'
             },
             {
@@ -23,7 +23,7 @@ class LoveTimeline {
                 title: 'Oficialmente Novios',
                 description: 'Decidimos caminar juntos hacia el futuro, unidos por el amor verdadero.',
                 icon: '💍',
-                image: 'boda1.JPG',
+                image: './imagen_timeline/novios3.JPG',
                 side: 'left'
             },
             {
@@ -31,7 +31,7 @@ class LoveTimeline {
                 title: 'Nuestra Boda',
                 description: '¡El día que tanto hemos esperado! Celebraremos nuestro amor eterno.',
                 icon: '💒',
-                image: 'santisimoo.png',
+                image: './imagen_timeline/gran_dia.jpg',
                 side: 'right',
                 isSpecial: true
             }
@@ -64,19 +64,6 @@ class LoveTimeline {
                 ${this.timelineData.map((item, index) => this.createTimelineItem(item, index)).join('')}
             </div>
             
-            <div class="timeline-navigation">
-                <button class="timeline-nav-btn prev-timeline" aria-label="Momento anterior">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <div class="timeline-dots">
-                    ${this.timelineData.map((_, index) => 
-                        `<button class="timeline-dot ${index === 0 ? 'active' : ''}" data-index="${index}"></button>`
-                    ).join('')}
-                </div>
-                <button class="timeline-nav-btn next-timeline" aria-label="Siguiente momento">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
         `;
         
         // Insert after the sponsors section
@@ -153,20 +140,7 @@ class LoveTimeline {
     }
     
     setupInteractivity() {
-        // Navigation buttons
-        const prevBtn = document.querySelector('.prev-timeline');
-        const nextBtn = document.querySelector('.next-timeline');
-        const dots = document.querySelectorAll('.timeline-dot');
-        
-        prevBtn.addEventListener('click', () => this.navigateTimeline(-1));
-        nextBtn.addEventListener('click', () => this.navigateTimeline(1));
-        
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                const index = parseInt(dot.dataset.index);
-                this.scrollToTimelineItem(index);
-            });
-        });
+        // Navigation removed
         
         // Card hover effects
         const timelineCards = document.querySelectorAll('.timeline-card');
