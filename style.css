@@ -659,26 +659,25 @@ section { padding: 40px 20px; }
 
 .event-section { 
     color: white; 
-    position: relative;
-    padding: 4rem 0;
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    position: relative; 
+    padding: 100px 20px; 
     overflow: hidden;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
 }
 
-.event-content {
+/*.event-content {
     flex: 1;
     min-width: 300px;
     max-width: 500px;
     position: relative;
     padding: 2rem;
-   /* background: rgba(0, 0, 0, 0.5);*/
+   background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     margin: 1rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
+}*/
 
 .event-section::before { 
     content: ''; 
@@ -691,49 +690,60 @@ section { padding: 40px 20px; }
 }
 
 /* Estilos para la animación de ceremonia y recepción */
-.event-content {
+.event-section.ceremony .event-content,
+.event-section.reception .event-content {
     opacity: 0;
     animation: slideUpFadeIn 1.5s ease-out forwards;
 }
 
-.event-icon {
+.event-section.ceremony .event-icon,
+.event-section.reception .event-icon {
     opacity: 0;
     animation: slideUpFadeIn 1.5s ease-out forwards;
     animation-delay: 0.3s;
 }
 
-.event-content h2 {
+.event-section.ceremony h2,
+.event-section.reception h2 {
     opacity: 0;
     animation: slideUpFadeIn 1.5s ease-out forwards;
     animation-delay: 0.6s;
 }
 
-.event-content p:nth-of-type(1) {
+.event-section.ceremony p:nth-of-type(1),
+.event-section.reception p:nth-of-type(1) {
     opacity: 0;
     animation: slideUpFadeIn 1.5s ease-out forwards;
     animation-delay: 0.9s;
 }
 
-.event-content p:nth-of-type(2) {
+.event-section.ceremony p:nth-of-type(2),
+.event-section.reception p:nth-of-type(2) {
     opacity: 0;
     animation: slideUpFadeIn 1.5s ease-out forwards;
     animation-delay: 1.2s;
 }
 
-.event-content .map-button {
+.event-section.ceremony .map-button,
+.event-section.reception .map-button {
     opacity: 0;
     animation: slideUpFadeIn 1.5s ease-out forwards;
     animation-delay: 1.5s;
 }
 
-/* Event content styles are defined above */
+.event-content { 
+    position: relative; 
+    z-index: 1; 
+}
 
 
-/*
+
+
+
 .ceremony { background-image: url('https://images.pexels.com/photos/1128783/pexels-photo-1128783.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); }
 
 .reception { background-image: url('https://images.pexels.com/photos/169190/pexels-photo-169190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); }
-*/
+
 
 
 
