@@ -658,8 +658,7 @@ section { padding: 40px 20px; }
 }
 
 .event-section { 
-    color: #333; 
-    background-color: white;
+    color: white; 
     position: relative;
     padding: 4rem 0;
     overflow: hidden;
