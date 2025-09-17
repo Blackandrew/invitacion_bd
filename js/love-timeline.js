@@ -11,7 +11,7 @@ class LoveTimeline {
                 side: 'left'
             },
             {
-                year: '2021',
+                year: '2016',
                 title: 'Primera Cita',
                 description: 'Una tarde mágica que marcó el inicio de nuestra hermosa historia de amor.',
                 icon: '❤️',
