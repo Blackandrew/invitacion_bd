@@ -1,5 +1,17 @@
 /* Advanced Animations for Wedding Invitation */
 
+/* Animación personalizada para info-item */
+.info-item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.info-item.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Base animation classes */
 .fade-in-up {
     opacity: 0;

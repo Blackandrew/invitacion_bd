@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Observe all animatable elements
     const animatableElements = document.querySelectorAll(
-        '.fade-in-up, .fade-in-left, .fade-in-right, .scale-in, .stagger-parent, .rotate-in'
+        '.fade-in-up, .fade-in-left, .fade-in-right, .scale-in, .stagger-parent, .rotate-in, .info-item'
     );
     animatableElements.forEach(el => observer.observe(el));
     
@@ -37,16 +37,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Parallax effect for hero section
-   /* function initParallax() {
+   function initParallax() {
         const heroSection = document.querySelector('.hero-section');
         if (!heroSection) return;
         
-        window.addEventListener('scroll', () => {
+      /*  window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const rate = scrolled * -0.5;
             heroSection.style.transform = `translateY(${rate}px)`;
-        });
-    }*/
+        });*/
+    }
     
     // Floating animation for decorative elements
     function initFloatingElements() {

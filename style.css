@@ -43,13 +43,27 @@ h2 {
     display: flex; justify-content: center; align-items: center; height: 100vh;
     /* THIS IS THE NEW IMAGE URL, INSPIRED BY YOUR EXAMPLE */
     background: url('https://images.pexels.com/photos/169190/pexels-photo-169190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
-   
     position: relative; color: white; padding: 20px;
 }
+
+/* Estilo original para escritorio */
 #guest-finder::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.4); }
 .finder-content {
     position: relative; z-index: 1; text-align: center; max-width: 550px; width: 100%;
     background: rgba(0,0,0,0.3); backdrop-filter: blur(10px); padding: 40px; border-radius: 10px;
+}
+
+/* Cambios para móviles */
+@media (max-width: 768px) {
+    #guest-finder {
+        background: url('imagen_timeline/novios2.jpg') no-repeat center center/cover;
+    }
+    .finder-content {
+        background: transparent; 
+        backdrop-filter: none; 
+        padding: 0; 
+        border-radius: 0;
+    }
 }
 .finder-content h1 { 
     font-family: 'Great Vibes', cursive;
@@ -58,6 +72,14 @@ h2 {
     color: rgb(255, 255, 255);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     letter-spacing: 2px;
+}
+
+.finder-content p { 
+    
+    font-size: 1.5rem;
+   
+    color:white
+
 }
 .finder-content .ampersand {
     color: inherit !important;
