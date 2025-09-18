@@ -2,12 +2,8 @@
 class EnhancedMusicPlayer {
     constructor() {
         this.playlist = [
-            {
-                title: 'Wildes',
-                artist: 'Artista Romántico',
-                src: 'audio/Wildes.mp3'
-            },
-            {
+           
+           {
                 title: 'Tu Lo Tienes Todo',
                 artist: 'Canción de Amor',
                 src: 'audio/tu_lo_tienen_todo.mp3'
@@ -249,19 +245,8 @@ class EnhancedMusicPlayer {
         }
     }
     
-    togglePlayer() {
-        this.player.classList.toggle('expanded');
-    }
-    
-    togglePlayPause() {
-        if (this.isPlaying) {
-            this.pause();
-        } else {
-            this.play();
-        }
-    }
-    
-    play() {
+    // Method to play the current track
+    playCurrentTrack() {
         if (this.audioContext && this.audioContext.state === 'suspended') {
             this.audioContext.resume();
         }
@@ -271,108 +256,66 @@ class EnhancedMusicPlayer {
         if (playPromise !== undefined) {
             playPromise.then(() => {
                 this.isPlaying = true;
-                this.updatePlayButton();
+                this.updatePlayButton(true);
             }).catch(error => {
-                console.log('Play was prevented');
+                console.log('Play was prevented:', error);
+                this.updatePlayButton(false);
             });
         }
     }
     
-    pause() {
-        this.audio.pause();
-        this.isPlaying = false;
-        this.updatePlayButton();
-    }
-    
-    updatePlayButton() {
-        const playBtn = this.player.querySelector('.play-pause i');
-        if (this.isPlaying) {
-            playBtn.className = 'fas fa-pause';
+    // Toggle play/pause
+    togglePlayPause() {
+        if (this.audio.paused) {
+            this.playCurrentTrack();
         } else {
-            playBtn.className = 'fas fa-play';
+            this.audio.pause();
+            this.isPlaying = false;
+            this.updatePlayButton(false);
         }
     }
     
-    previousTrack() {
-        this.currentTrack = (this.currentTrack - 1 + this.playlist.length) % this.playlist.length;
-        this.loadTrack();
-    }
-    
-    nextTrack() {
-        this.currentTrack = (this.currentTrack + 1) % this.playlist.length;
-        this.loadTrack();
-    }
-    
-    playTrack(index) {
-        this.currentTrack = index;
-        this.loadTrack();
-        this.play();
-    }
-    
-    loadTrack() {
-        const track = this.playlist[this.currentTrack];
-        this.audio.src = track.src;
-        
-        // Update track info
-        this.player.querySelector('.track-title').textContent = track.title;
-        this.player.querySelector('.track-artist').textContent = track.artist;
-        
-        // Update playlist
-        this.player.querySelectorAll('.playlist-item').forEach((item, index) => {
-            item.classList.toggle('active', index === this.currentTrack);
-        });
-    }
-    
-    seekTo(e) {
-        const progressBar = e.currentTarget;
-        const clickX = e.offsetX;
-        const width = progressBar.offsetWidth;
-        const duration = this.audio.duration;
-        
-        if (duration) {
-            this.audio.currentTime = (clickX / width) * duration;
+    // Update play button state
+    updatePlayButton(isPlaying) {
+        const playPauseBtn = this.player.querySelector('.play-pause i');
+        if (playPauseBtn) {
+            if (isPlaying) {
+                playPauseBtn.classList.remove('fa-play');
+                playPauseBtn.classList.add('fa-pause');
+            } else {
+                playPauseBtn.classList.remove('fa-pause');
+                playPauseBtn.classList.add('fa-play');
+            }
         }
-    }
-    
-    updateProgress() {
-        const current = this.audio.currentTime;
-        const duration = this.audio.duration;
-        
-        if (duration) {
-            const progressPercent = (current / duration) * 100;
-            this.player.querySelector('.progress-fill').style.width = `${progressPercent}%`;
-            this.player.querySelector('.progress-handle').style.left = `${progressPercent}%`;
-        }
-        
-        this.player.querySelector('.time-current').textContent = this.formatTime(current);
-    }
-    
-    updateDuration() {
-        const duration = this.audio.duration;
-        this.player.querySelector('.time-duration').textContent = this.formatTime(duration);
-    }
-    
-    setVolume(value) {
-        this.audio.volume = value / 100;
-    }
-    
-    togglePlaylist() {
-        this.player.classList.toggle('playlist-open');
-    }
-    
-    formatTime(seconds) {
-        if (isNaN(seconds)) return '0:00';
-        
-        const minutes = Math.floor(seconds / 60);
-        const secs = Math.floor(seconds % 60);
-        return `${minutes}:${secs.toString().padStart(2, '0')}`;
     }
 }
 
 // Initialize enhanced music player
+let musicPlayerInstance = null;
+
+// Function to initialize music player
 document.addEventListener('DOMContentLoaded', () => {
-    // Wait for page to load
-    setTimeout(() => {
-        new EnhancedMusicPlayer();
-    }, 1500);
+    // Create player instance but don't start playing yet
+    musicPlayerInstance = new EnhancedMusicPlayer();
+    
+    // Function to start music after name confirmation
+    window.startMusicAfterConfirmation = function() {
+        if (musicPlayerInstance) {
+            // Resume audio context if it was suspended
+            if (musicPlayerInstance.audioContext && musicPlayerInstance.audioContext.state === 'suspended') {
+                musicPlayerInstance.audioContext.resume();
+            }
+            musicPlayerInstance.playCurrentTrack();
+        }
+    };
+    
+    // Listen for guest confirmation event
+    document.addEventListener('guestConfirmed', () => {
+        if (musicPlayerInstance) {
+            // Small delay to ensure everything is ready
+            setTimeout(() => {
+                window.startMusicAfterConfirmation();
+            }, 1000);
+        }
+    });
 });

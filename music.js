@@ -81,6 +81,26 @@ document.addEventListener('DOMContentLoaded', function() {
         playIcon.classList.remove('fa-pause');
         playIcon.classList.add('fa-play');
         playPauseBtn.classList.remove('playing');
+        
+        // Mostrar mensaje de error en la consola
+        if (music.error) {
+            switch(music.error.code) {
+                case MediaError.MEDIA_ERR_ABORTED:
+                    console.error('La reproducción fue cancelada');
+                    break;
+                case MediaError.MEDIA_ERR_NETWORK:
+                    console.error('Error de red al cargar el audio');
+                    break;
+                case MediaError.MEDIA_ERR_DECODE:
+                    console.error('Error al decodificar el archivo de audio');
+                    break;
+                case MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED:
+                    console.error('Formato de audio no soportado');
+                    break;
+                default:
+                    console.error('Error de reproducción desconocido');
+            }
+        }
     });
     
     // Handle loading events
