@@ -854,6 +854,25 @@ section { padding: 40px 20px; }
     overflow: hidden;
 }
 
+/* Degradado suave al final de event-section para transición */
+.event-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(236, 240, 236, 0.3) 30%,
+        rgba(236, 240, 236, 0.7) 70%,
+        rgb(236, 240, 236) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
 /*.event-content {
     flex: 1;
     min-width: 300px;
@@ -1058,8 +1077,40 @@ section { padding: 40px 20px; }
 
 .sponsors-section { background: #f8f8f8; }
 .sponsor-name { font-style: italic; font-size: 1.2rem; margin-top: 10px; }
-.info-section { display: flex; flex-direction: column; align-items: center; gap: 40px; }
-.info-item { max-width: 500px; width: 100%; text-align: center; }
+.info-section { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 40px; 
+    position: relative;
+    padding-top: 80px;
+}
+
+/* Degradado suave al inicio de info-section para transición */
+.info-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(
+        to bottom,
+        rgb(236, 240, 236) 0%,
+        rgba(236, 240, 236, 0.8) 40%,
+        rgba(236, 240, 236, 0.3) 80%,
+        transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+.info-item { 
+    max-width: 500px; 
+    width: 100%; 
+    text-align: center; 
+    position: relative;
+    z-index: 2;
+}
 .info-icon { font-size: 2.5rem; color: #000; margin-bottom: 15px; }
 
 /* Estilo para los títulos h3 en info-section */
@@ -1313,6 +1364,21 @@ footer { padding: 20px; background-color: #6B7C59; color: white; font-family: 'P
         text-align: center;
     }
 }
+/* Ajustes responsivos para las transiciones */
+@media (max-width: 768px) {
+    .event-section::after {
+        height: 80px; /* Reducir altura del degradado en móviles */
+    }
+    
+    .info-section::before {
+        height: 60px; /* Reducir altura del degradado en móviles */
+    }
+    
+    .info-section {
+        padding-top: 60px; /* Reducir padding en móviles */
+    }
+}
+
 @media (max-width: 768px) { 
     .hero-content h1, .finder-content h1 { 
         font-size: 4rem; 
