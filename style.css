@@ -169,6 +169,20 @@ h2 {
     pointer-events: none;
 }
 
+.foto-regalos {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+    padding: 100px 0 0 0;
+    box-sizing: border-box;
+    margin: 0;
+    position: relative;
+    height: 1000px;
+}
+
+
 /* Ocultar arbol1 y arbol2 en móviles */
 @media (max-width: 768px) {
     #arbol3
@@ -197,6 +211,24 @@ h2 {
     z-index: 1;
     pointer-events: none;
 }
+
+.foto-regalos::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(
+        to bottom, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.8) 70%,
+        white 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
 
 .guest-divison > div {
     flex: 1;
@@ -844,11 +876,129 @@ section { padding: 40px 20px; }
     background: rgba(0, 0, 0, 0.5); 
 }
 
+/* Animación personalizada para deslizar de izquierda a derecha */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animación personalizada para deslizar de derecha a izquierda */
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 /* Estilos para la animación de ceremonia y recepción */
 .event-section.ceremony .event-content,
 .event-section.reception .event-content {
     opacity: 0;
     animation: slideUpFadeIn 1.5s ease-out forwards;
+}
+
+/* Aplicar animación personalizada al contenido de la ceremonia y recepción */
+#event-content-ceremony {
+    animation: slideInFromLeft 6s ease-out forwards;
+    opacity: 1; /* Sobrescribir la opacidad de la animación anterior */
+}
+
+#event-content-reception {
+    animation: slideInFromRight 6s ease-out 6s forwards; /* Inicia después de 6 segundos, de derecha a izquierda */
+    opacity: 0; /* Inicia invisible */
+    margin-left: 30px; /* Espacio entre los elementos */
+}
+
+/* Aplicar margen mayor solo en pantallas de escritorio */
+@media (min-width: 1024px) {
+   /* #event-content-reception {
+       margin-left: 180px;
+    }*/
+
+    .conten-foto-regalos {
+        position: relative;
+        width: 100%;
+        padding: 4rem 0; /* Aumentado el padding para mejor visualización */
+        overflow: hidden;
+        background-color: #fff; /* Fondo blanco para asegurar contraste */
+        display: none;
+    }
+    
+    .foto-regalos {
+        position: relative;
+        max-width: 80%; /* Reducido para mejor visualización */
+        margin: 0 auto; /* Centrado */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 0; /* Espacio para los degradados superior e inferior */
+    }
+    
+    .foto-regalos::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 150px; /* Altura del degradado superior */
+        background: linear-gradient(to bottom, 
+            rgba(255, 255, 255, 1) 0%, 
+            rgba(255, 255, 255, 0.8) 50%, 
+            rgba(255, 255, 255, 0) 100%);
+        z-index: 2; /* Asegurar que esté por encima de la imagen */
+        pointer-events: none;
+    }
+    
+    .foto-regalos::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 150px; /* Altura del degradado inferior */
+        background: linear-gradient(to top, 
+            rgba(255, 255, 255, 1) 0%, 
+            rgba(255, 255, 255, 0.8) 50%, 
+            rgba(255, 255, 255, 0) 100%);
+        z-index: 2; /* Asegurar que esté por encima de la imagen */
+        pointer-events: none;
+    }
+    
+    .foto-regalos img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        position: relative;
+        z-index: 1; /* Asegurar que esté por debajo del degradado */
+    }
+    
+    /* Estilos para móviles */
+    @media (max-width: 1023px) {
+        .conten-foto-regalos {
+            padding: 2rem 0;
+        }
+        
+        .foto-regalos {
+            max-width: 95%;
+            padding: 1.5rem 0; /* Ajuste para móviles */
+        }
+        
+        .foto-regalos::before,
+        .foto-regalos::after {
+            height: 80px; /* Degradados más cortos en móviles */
+        }
+    }
 }
 
 .event-section.ceremony .event-icon,
