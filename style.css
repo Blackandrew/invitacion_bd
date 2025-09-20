@@ -123,29 +123,13 @@ h2 {
     background: url('flores_inicio.jpg') no-repeat center center/cover;
 }
 
-.hero-section::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: linear-gradient(
-        to bottom, 
-        transparent 0%, 
-        rgba(255, 255, 255, 0.8) 70%, 
-        white 100%
-    );
-    z-index: 1;
-    pointer-events: none;
-}
 .guest-divison {
     display: flex;
     justify-content: center;
     align-items: stretch;
     gap: 20px;
     width: 100%;
-    padding: 100px 0 0 0;
+    padding: 0 0 0 0;
     box-sizing: border-box;
     margin: 0;
     position: relative;
@@ -158,11 +142,12 @@ h2 {
     top: 0;
     left: 0;
     right: 0;
-    height: 100px;
+    height: 80px;
     background: linear-gradient(
         to bottom, 
         white 0%, 
-        rgba(255, 255, 255, 0.8) 30%, 
+        rgba(255, 255, 255, 0.8) 40%, 
+        rgba(255, 255, 255, 0.3) 80%,
         transparent 100%
     );
     z-index: 1;
@@ -201,12 +186,13 @@ h2 {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100px;
+    height: 80px;
     background: linear-gradient(
         to bottom, 
         transparent 0%, 
-        rgba(255, 255, 255, 0.8) 70%, 
-        white 100%
+        rgba(236, 240, 236, 0.3) 30%,
+        rgba(236, 240, 236, 0.7) 70%, 
+        rgb(236, 240, 236) 100%
     );
     z-index: 1;
     pointer-events: none;
@@ -262,6 +248,43 @@ h2 {
     background: url('fondo_flores.jpg') no-repeat center center/cover;
     z-index: 1;
 }
+
+/* Degradados fade para hero_fondo_flores */
+.hero_fondo_flores::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 30%,
+        rgba(255, 255, 255, 0.3) 70%,
+        rgba(255, 255, 255, 0.6) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero_fondo_flores::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(236, 240, 236, 0.3) 30%,
+        rgba(236, 240, 236, 0.7) 70%,
+        rgb(236, 240, 236) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+}
 .hero_fondo_flores_derecha {
     position: absolute;
     top: -60px; /* Ajuste para compensar el padding superior */
@@ -272,6 +295,56 @@ h2 {
     transform: scaleX(-1); /* Voltea la imagen horizontalmente */
     z-index: 1;
     opacity: 0.9;
+}
+
+/* Degradados fade para hero_fondo_flores_derecha */
+.hero_fondo_flores_derecha::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100%;
+    background: linear-gradient(
+        to left,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 30%,
+        rgba(255, 255, 255, 0.3) 70%,
+        rgba(255, 255, 255, 0.6) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero_fondo_flores_derecha::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(236, 240, 236, 0.3) 30%,
+        rgba(236, 240, 236, 0.7) 70%,
+        rgb(236, 240, 236) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Ajustes responsivos para hero_fondo_flores */
+@media (max-width: 768px) {
+    .hero_fondo_flores::before,
+    .hero_fondo_flores_derecha::before {
+        width: 40px; /* Reducir ancho del fade lateral en móviles */
+    }
+    
+    .hero_fondo_flores::after,
+    .hero_fondo_flores_derecha::after {
+        height: 60px; /* Reducir altura del fade inferior en móviles */
+    }
 }
 
 /* Ocultar fondos de flores en pantallas pequeñas */
@@ -650,11 +723,17 @@ section { padding: 40px 20px; }
     margin: 20px auto;
     max-width: 600px;
     position: relative;
-    z-index: 10;
+    z-index: 5;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Asegurar que el contenido esté por debajo del degradado */
+.countdown-section .stagger-parent {
+    position: relative;
+    z-index: 5;
 }
 #countdown > div { display: flex; flex-direction: column; }
 #countdown > div span { font-size: 1rem; color: #6B7C59; }
@@ -664,8 +743,8 @@ section { padding: 40px 20px; }
     width: 100%;
     min-height: 100vh; /* Asegura que ocupe al menos toda la altura de la pantalla */
     position: relative;
-    padding: 40px 0 80px; /* Añadí padding inferior para el degradado */
-    margin-bottom: -40px; /* Superposición con la siguiente sección */
+    padding: 40px 0 120px; /* Aumentado padding inferior para el degradado */
+    margin-bottom: -60px; /* Aumentada superposición con la siguiente sección */
     overflow: hidden; /* Evita que el degradado se salga del contenedor */
 }
 
@@ -680,10 +759,11 @@ section { padding: 40px 20px; }
     background: linear-gradient(
         to bottom, 
         transparent 0%, 
-        rgba(255, 255, 255, 0.8) 50%, 
-        #F8F7F5 100%
+        rgba(236, 240, 236, 0.4) 20%,
+        rgba(236, 240, 236, 0.8) 60%, 
+        rgb(236, 240, 236) 100%
     );
-    z-index: 1;
+    z-index: 10;
     pointer-events: none;
 }
 
@@ -694,11 +774,12 @@ section { padding: 40px 20px; }
     top: 0;
     left: 0;
     right: 0;
-    height: 100px;
+    height: 80px;
     background: linear-gradient(
         to bottom, 
-        white 0%, 
-        rgba(255, 255, 255, 0.8) 30%, 
+        rgb(236, 240, 236) 0%, 
+        rgba(236, 240, 236, 0.8) 40%, 
+        rgba(236, 240, 236, 0.3) 80%,
         transparent 100%
     );
     z-index: 1;
@@ -713,6 +794,8 @@ section { padding: 40px 20px; }
     text-transform: uppercase;
     letter-spacing: 1px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 5;
 }
 
 .countdown-section p {
@@ -720,6 +803,8 @@ section { padding: 40px 20px; }
     font-size: 1.5rem;
     margin: 10px 0;
     color: #6B7C59;
+    position: relative;
+    z-index: 5;
 }
 
 
@@ -785,8 +870,8 @@ section { padding: 40px 20px; }
     align-items: center;       /* Centra vertical */
     min-height: 20vh;         /* Aumenté la altura mínima */
     text-align: center;        /* Centra el texto dentro del párrafo */
-    padding: 60px 20px 40px;   /* Ajusté el padding para el degradado */
-    background-color: #F8F7F5; /* Fondo claro */
+    padding: 80px 20px 80px;   /* Ajusté el padding para los degradados */
+    background-color: rgb(236, 240, 236); /* Fondo claro */
     position: relative;        /* Necesario para el pseudo-elemento */
     margin-top: -30px;         /* Superposición con la sección anterior */
 }
@@ -801,9 +886,29 @@ section { padding: 40px 20px; }
     height: 80px;
     background: linear-gradient(
         to bottom, 
-        rgba(255, 255, 255, 0) 0%, 
-        rgba(248, 247, 245, 0.8) 50%, 
-        #F8F7F5 100%
+        rgb(236, 240, 236) 0%, 
+        rgba(236, 240, 236, 0.8) 40%, 
+        rgba(236, 240, 236, 0.3) 80%,
+        transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Degradado en la parte inferior */
+.sponsors-section2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(
+        to bottom, 
+        transparent 0%, 
+        rgba(236, 240, 236, 0.3) 30%,
+        rgba(236, 240, 236, 0.7) 70%, 
+        rgb(236, 240, 236) 100%
     );
     z-index: 1;
     pointer-events: none;
@@ -861,7 +966,7 @@ section { padding: 40px 20px; }
     bottom: 0;
     left: 0;
     right: 0;
-    height: 120px;
+    height: 80px;
     background: linear-gradient(
         to bottom,
         transparent 0%,
@@ -893,6 +998,44 @@ section { padding: 40px 20px; }
     right: 0; 
     bottom: 0; 
     background: rgba(0, 0, 0, 0.5); 
+}
+
+/* Degradado superior para event-section */
+.event-section .fade-overlay-top {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(
+        to bottom,
+        rgb(236, 240, 236) 0%,
+        rgba(236, 240, 236, 0.8) 40%,
+        rgba(236, 240, 236, 0.3) 80%,
+        transparent 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Degradado superior para sponsors-section2 */
+.sponsors-section2 .fade-overlay-top {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(
+        to bottom,
+        rgb(236, 240, 236) 0%,
+        rgba(236, 240, 236, 0.8) 40%,
+        rgba(236, 240, 236, 0.3) 80%,
+        transparent 100%
+    );
+    z-index: 2;
+    pointer-events: none;
 }
 
 /* Animación personalizada para deslizar de izquierda a derecha */
@@ -947,10 +1090,47 @@ section { padding: 40px 20px; }
     .conten-foto-regalos {
         position: relative;
         width: 100%;
-        padding: 4rem 0; /* Aumentado el padding para mejor visualización */
+        padding: 6rem 0; /* Aumentado el padding para los degradados */
         overflow: hidden;
-        background-color: #fff; /* Fondo blanco para asegurar contraste */
+        background-color: rgb(236, 240, 236); /* Fondo consistente */
         display: none;
+    }
+    
+    /* Degradados para conten-foto-regalos */
+    .conten-foto-regalos::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 80px;
+        background: linear-gradient(
+            to bottom, 
+            rgb(236, 240, 236) 0%, 
+            rgba(236, 240, 236, 0.8) 40%, 
+            rgba(236, 240, 236, 0.3) 80%,
+            transparent 100%
+        );
+        z-index: 2;
+        pointer-events: none;
+    }
+    
+    .conten-foto-regalos::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 80px;
+        background: linear-gradient(
+            to bottom, 
+            transparent 0%, 
+            rgba(236, 240, 236, 0.3) 30%,
+            rgba(236, 240, 236, 0.7) 70%, 
+            rgb(236, 240, 236) 100%
+        );
+        z-index: 2;
+        pointer-events: none;
     }
     
     .foto-regalos {
@@ -1005,7 +1185,12 @@ section { padding: 40px 20px; }
     /* Estilos para móviles */
     @media (max-width: 1023px) {
         .conten-foto-regalos {
-            padding: 2rem 0;
+            padding: 4rem 0; /* Aumentado para los degradados */
+        }
+        
+        .conten-foto-regalos::before,
+        .conten-foto-regalos::after {
+            height: 80px; /* Degradados más cortos en móviles */
         }
         
         .foto-regalos {
@@ -1123,9 +1308,73 @@ section { padding: 40px 20px; }
 .dress-code { font-weight: bold; font-size: 1.2rem; }
 .info-link { text-decoration: none; font-weight: 500; color: #8B9A7A; border-bottom: 2px solid #8B9A7A; padding-bottom: 3px; }
 
-.rsvp-section { background: #8B9A7A; color: white; }
-.rsvp-section h2 { color: white; }
-.rsvp-button { display: inline-block; margin-top: 20px; padding: 15px 40px; background: white; color: #333; text-decoration: none; font-weight: bold; font-size: 1.1rem; border-radius: 5px; transition: transform 0.3s; }
+.rsvp-section { 
+    background: #8B9A7A; 
+    color: white; 
+    position: relative;
+    padding: 80px 20px;
+}
+
+/* Degradado superior para rsvp-section */
+.rsvp-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(
+        to bottom, 
+        rgb(236, 240, 236) 0%, 
+        rgba(236, 240, 236, 0.8) 40%, 
+        rgba(236, 240, 236, 0.3) 80%,
+        transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Degradado inferior para rsvp-section */
+.rsvp-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(
+        to bottom, 
+        transparent 0%, 
+        rgba(139, 154, 122, 0.3) 30%,
+        rgba(139, 154, 122, 0.7) 70%, 
+        #6B7C59 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+.rsvp-section h2 { 
+    color: white; 
+    position: relative;
+    z-index: 2;
+}
+.rsvp-section p {
+    position: relative;
+    z-index: 2;
+}
+.rsvp-button { 
+    display: inline-block; 
+    margin-top: 20px; 
+    padding: 15px 40px; 
+    background: white; 
+    color: #333; 
+    text-decoration: none; 
+    font-weight: bold; 
+    font-size: 1.1rem; 
+    border-radius: 5px; 
+    transition: transform 0.3s;
+    position: relative;
+    z-index: 2;
+}
 .rsvp-button:hover { transform: scale(1.05); }
 
 footer { padding: 20px; background-color: #6B7C59; color: white; font-family: 'Playfair Display', serif; }
@@ -1367,15 +1616,43 @@ footer { padding: 20px; background-color: #6B7C59; color: white; font-family: 'P
 /* Ajustes responsivos para las transiciones */
 @media (max-width: 768px) {
     .event-section::after {
-        height: 80px; /* Reducir altura del degradado en móviles */
-    }
-    
-    .info-section::before {
         height: 60px; /* Reducir altura del degradado en móviles */
     }
     
+    .event-section .fade-overlay-top,
+    .sponsors-section2 .fade-overlay-top {
+        height: 60px; /* Reducir altura del degradado superior en móviles */
+    }
+    
+    .info-section::before {
+        height: 50px; /* Reducir altura del degradado en móviles */
+    }
+    
     .info-section {
-        padding-top: 60px; /* Reducir padding en móviles */
+        padding-top: 50px; /* Reducir padding en móviles */
+    }
+    
+    /* Ajustes para todas las secciones en móviles */
+    .guest-divison::before,
+    .guest-divison::after,
+    .countdown-section::before,
+    .sponsors-section2::before,
+    .sponsors-section2::after,
+    .rsvp-section::before,
+    .rsvp-section::after {
+        height: 60px; /* Degradados más cortos en móviles */
+    }
+    
+    .countdown-section::after {
+        height: 80px; /* Mantener altura mayor para visibilidad en móviles */
+    }
+    
+    .sponsors-section2 {
+        padding: 60px 20px 60px; /* Reducir padding en móviles */
+    }
+    
+    .rsvp-section {
+        padding: 60px 20px; /* Reducir padding en móviles */
     }
 }
 
