@@ -123,6 +123,26 @@ h2 {
     background: url('flores_inicio.jpg') no-repeat center center/cover;
 }
 
+/* Degradado inferior para hero-section */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(236, 240, 236, 0.2) 20%,
+        rgba(236, 240, 236, 0.6) 60%,
+        rgba(236, 240, 236, 0.9) 85%,
+        rgb(236, 240, 236) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+}
+
 .guest-divison {
     display: flex;
     justify-content: center;
@@ -142,12 +162,13 @@ h2 {
     top: 0;
     left: 0;
     right: 0;
-    height: 80px;
+    height: 120px;
     background: linear-gradient(
         to bottom, 
-        white 0%, 
-        rgba(255, 255, 255, 0.8) 40%, 
-        rgba(255, 255, 255, 0.3) 80%,
+        rgb(236, 240, 236) 0%, 
+        rgba(236, 240, 236, 0.9) 15%,
+        rgba(236, 240, 236, 0.6) 40%, 
+        rgba(236, 240, 236, 0.2) 80%,
         transparent 100%
     );
     z-index: 1;
@@ -966,7 +987,7 @@ section { padding: 40px 20px; }
     bottom: 0;
     left: 0;
     right: 0;
-    height: 80px;
+    height: 50px;
     background: linear-gradient(
         to bottom,
         transparent 0%,
@@ -1007,11 +1028,11 @@ section { padding: 40px 20px; }
     top: 0;
     left: 0;
     right: 0;
-    height: 80px;
+    height: 50px;
     background: linear-gradient(
         to bottom,
         rgb(236, 240, 236) 0%,
-        rgba(236, 240, 236, 0.8) 40%,
+        rgba(236, 240, 236, 0.7) 50%,
         rgba(236, 240, 236, 0.3) 80%,
         transparent 100%
     );
@@ -1616,12 +1637,15 @@ footer { padding: 20px; background-color: #6B7C59; color: white; font-family: 'P
 /* Ajustes responsivos para las transiciones */
 @media (max-width: 768px) {
     .event-section::after {
-        height: 60px; /* Reducir altura del degradado en móviles */
+        height: 40px; /* Reducir altura del degradado en móviles */
     }
     
-    .event-section .fade-overlay-top,
+    .event-section .fade-overlay-top {
+        height: 40px; /* Reducir altura del degradado superior en móviles */
+    }
+    
     .sponsors-section2 .fade-overlay-top {
-        height: 60px; /* Reducir altura del degradado superior en móviles */
+        height: 60px; /* Mantener altura para sponsors-section2 */
     }
     
     .info-section::before {
@@ -1633,7 +1657,11 @@ footer { padding: 20px; background-color: #6B7C59; color: white; font-family: 'P
     }
     
     /* Ajustes para todas las secciones en móviles */
-    .guest-divison::before,
+    .hero-section::after,
+    .guest-divison::before {
+        height: 80px; /* Mantener altura mayor para mejor transición en móviles */
+    }
+    
     .guest-divison::after,
     .countdown-section::before,
     .sponsors-section2::before,
