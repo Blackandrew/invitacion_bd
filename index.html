@@ -79,14 +79,49 @@
 
         <main>
             <section class="guest-divison" style="background-color: rgb(236, 240, 236);">
-                <div id="arbol1">
-                    <img src="arbol_color.jpg" alt="Bertha y Marlon">
+                <!-- Desktop layout - original -->
+                <div class="desktop-gallery">
+                    <div id="arbol1">
+                        <img src="arbol_color.jpg" alt="Bertha y Marlon">
+                    </div>
+                    <div id="arbol3">
+                        <img src="nosotros_color2.jpg" alt="Bertha y Marlon">
+                    </div>
+                    <div id="arbol2">
+                        <img src="nosotros_color.jpg" alt="Bertha y Marlon">
+                    </div>
                 </div>
-                <div id="arbol3">
-                    <img src="nosotros_color2.jpg" alt="Bertha y Marlon">
-                </div>
-                <div id="arbol2">
-                    <img src="nosotros_color.jpg" alt="Bertha y Marlon">
+                
+                <!-- Mobile carousel -->
+                <div class="mobile-carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <div class="carousel-slide active">
+                                <img src="arbol_color.jpg" alt="Bertha y Marlon">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="nosotros_color2.jpg" alt="Bertha y Marlon">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="nosotros_color.jpg" alt="Bertha y Marlon">
+                            </div>
+                        </div>
+                        
+                        <!-- Navigation buttons -->
+                        <button class="carousel-btn carousel-btn-prev" aria-label="Imagen anterior">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn carousel-btn-next" aria-label="Siguiente imagen">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        
+                        <!-- Dots indicator -->
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" data-slide="0"></button>
+                            <button class="carousel-dot" data-slide="1"></button>
+                            <button class="carousel-dot" data-slide="2"></button>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -138,9 +173,9 @@
 
             <section class="conten-foto-regalos" style="background-color: rgb(236, 240, 236);"> 
         
-              <div class="foto-regalos">
+              <!-- <div class="foto-regalos">
                     <img src="nosotros_color2.jpg" alt="Bertha y Marlon">
-                </div>
+                </div> -->
             </section>
 
 
@@ -251,6 +286,7 @@
     <script src="js/preloader.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/particles.js"></script>
+    <script src="js/mobile-carousel.js"></script>
     <!-- <script src="js/love-timeline.js"></script> -->
     <!--<script src="js/enhanced-music.js"></script>-->
     <script src="music.js"></script>
