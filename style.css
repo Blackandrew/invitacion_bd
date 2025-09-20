@@ -1713,17 +1713,52 @@ footer { padding: 20px; background-color: #6B7C59; color: white; font-family: 'P
     display: none; /* Hidden by default, shown only on mobile */
     width: 100%;
     position: relative;
-    padding: 20px 0;
+    padding: 30px 0; /* Increased padding */
 }
 
 .carousel-container {
     position: relative;
-    width: 100%;
+    width: 95%; /* Reduced from 100% to add side margins */
     max-width: 100%;
     margin: 0 auto;
     overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 8px; /* Reduced border radius for minimal borders */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+}
+
+/* Fade effect on the sides */
+.carousel-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(236, 240, 236, 0.8) 0%,
+        rgba(236, 240, 236, 0.4) 50%,
+        transparent 100%
+    );
+    z-index: 5;
+    pointer-events: none;
+}
+
+.carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 100%;
+    background: linear-gradient(
+        to left,
+        rgba(236, 240, 236, 0.8) 0%,
+        rgba(236, 240, 236, 0.4) 50%,
+        transparent 100%
+    );
+    z-index: 5;
+    pointer-events: none;
 }
 
 .carousel-track {
@@ -1735,20 +1770,21 @@ footer { padding: 20px; background-color: #6B7C59; color: white; font-family: 'P
 .carousel-slide {
     flex: 0 0 33.333%; /* Each slide takes 1/3 of track width */
     position: relative;
-    height: 400px;
+    height: 500px; /* Increased height */
     overflow: hidden;
 }
 
 .carousel-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Changed from cover to contain to show full image */
     display: block;
     transition: transform 0.3s ease;
+    background-color: rgba(236, 240, 236, 0.5); /* Light background for letterboxing */
 }
 
 .carousel-slide:hover img {
-    transform: scale(1.05);
+    transform: scale(1.02); /* Reduced scale for subtle effect */
 }
 
 /* Navigation buttons */
@@ -1756,20 +1792,21 @@ footer { padding: 20px; background-color: #6B7C59; color: white; font-family: 'P
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 45px;
-    height: 45px;
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.7); /* More transparent */
+    border: 1px solid rgba(107, 124, 89, 0.2); /* Subtle border */
     border-radius: 50%;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
     color: #6B7C59;
     z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Minimal shadow */
+    backdrop-filter: blur(5px); /* Subtle blur effect */
 }
 
 .carousel-btn:hover {
@@ -1790,28 +1827,31 @@ footer { padding: 20px; background-color: #6B7C59; color: white; font-family: 'P
 .carousel-dots {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
     margin-top: 20px;
     padding: 0 20px;
 }
 
 .carousel-dot {
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    border: none;
-    background: rgba(107, 124, 89, 0.3);
+    border: 1px solid rgba(107, 124, 89, 0.3); /* Subtle border */
+    background: rgba(107, 124, 89, 0.2); /* More transparent */
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .carousel-dot.active {
-    background: #6B7C59;
-    transform: scale(1.2);
+    background: rgba(107, 124, 89, 0.8);
+    border-color: rgba(107, 124, 89, 0.6);
+    transform: scale(1.3);
+    box-shadow: 0 0 8px rgba(107, 124, 89, 0.3); /* Subtle glow */
 }
 
 .carousel-dot:hover {
-    background: #8B9A7A;
+    background: rgba(139, 154, 122, 0.6);
+    border-color: rgba(139, 154, 122, 0.4);
 }
 
 /* Desktop gallery - keep original styles but wrap in desktop-gallery class */
@@ -1866,13 +1906,13 @@ footer { padding: 20px; background-color: #6B7C59; color: white; font-family: 'P
     
     /* Adjust carousel for smaller screens */
     .carousel-slide {
-        height: 350px;
+        height: 450px; /* Increased from 350px */
     }
     
     .carousel-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
     }
     
     .carousel-btn-prev {
@@ -1886,13 +1926,13 @@ footer { padding: 20px; background-color: #6B7C59; color: white; font-family: 'P
 
 @media (max-width: 480px) {
     .carousel-slide {
-        height: 300px;
+        height: 380px; /* Increased from 300px */
     }
     
     .carousel-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 14px;
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
     }
     
     .carousel-btn-prev {
@@ -1908,7 +1948,7 @@ footer { padding: 20px; background-color: #6B7C59; color: white; font-family: 'P
     }
     
     .carousel-dot {
-        width: 10px;
-        height: 10px;
+        width: 6px;
+        height: 6px;
     }
 }
