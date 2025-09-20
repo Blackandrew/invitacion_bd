@@ -12,7 +12,7 @@ class MobileCarousel {
         this.slides = this.carousel.querySelectorAll('.carousel-slide');
         this.prevBtn = this.carousel.querySelector('.carousel-btn-prev');
         this.nextBtn = this.carousel.querySelector('.carousel-btn-next');
-        this.dots = this.carousel.querySelectorAll('.carousel-dot');
+        // Dots removed - no longer needed
         
         this.currentSlide = 0;
         this.totalSlides = this.slides.length;
@@ -42,10 +42,7 @@ class MobileCarousel {
         this.prevBtn?.addEventListener('click', () => this.prevSlide());
         this.nextBtn?.addEventListener('click', () => this.nextSlide());
         
-        // Dot navigation
-        this.dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => this.goToSlide(index));
-        });
+        // Dot navigation removed - no longer needed
         
         // Touch events for swipe functionality
         this.track.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: true });
@@ -176,10 +173,7 @@ class MobileCarousel {
             slide.classList.toggle('active', index === this.currentSlide);
         });
         
-        // Update dots
-        this.dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === this.currentSlide);
-        });
+        // Dots removed - no longer needed
     }
     
     // Auto-play functionality

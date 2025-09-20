@@ -1711,55 +1711,27 @@ footer { padding: 20px; background-color: #6B7C59; color: white; font-family: 'P
 /* --- MOBILE CAROUSEL STYLES --- */
 .mobile-carousel {
     display: none; /* Hidden by default, shown only on mobile */
-    width: 100%;
+    width: 100vw; /* Full viewport width */
     position: relative;
-    padding: 30px 0; /* Increased padding */
+    padding: 10px 0; /* Minimal padding */
+    margin: 0;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
 }
 
 .carousel-container {
     position: relative;
-    width: 95%; /* Reduced from 100% to add side margins */
+    width: 100%; /* Full width - no side margins */
     max-width: 100%;
-    margin: 0 auto;
+    margin: 0;
     overflow: hidden;
-    border-radius: 8px; /* Reduced border radius for minimal borders */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    border-radius: 0; /* Remove border radius for full width */
+    box-shadow: none; /* Remove shadow for cleaner look */
 }
 
-/* Fade effect on the sides */
-.carousel-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 30px;
-    height: 100%;
-    background: linear-gradient(
-        to right,
-        rgba(236, 240, 236, 0.8) 0%,
-        rgba(236, 240, 236, 0.4) 50%,
-        transparent 100%
-    );
-    z-index: 5;
-    pointer-events: none;
-}
-
-.carousel-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 30px;
-    height: 100%;
-    background: linear-gradient(
-        to left,
-        rgba(236, 240, 236, 0.8) 0%,
-        rgba(236, 240, 236, 0.4) 50%,
-        transparent 100%
-    );
-    z-index: 5;
-    pointer-events: none;
-}
+/* Container fade effects removed for full width */
 
 .carousel-track {
     display: flex;
@@ -1774,13 +1746,14 @@ footer { padding: 20px; background-color: #6B7C59; color: white; font-family: 'P
     overflow: hidden;
 }
 
+/* Individual fade effects removed for maximum width coverage */
+
 .carousel-slide img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Changed from cover to contain to show full image */
+    object-fit: cover; /* Changed back to cover for full width */
     display: block;
     transition: transform 0.3s ease;
-    background-color: rgba(236, 240, 236, 0.5); /* Light background for letterboxing */
 }
 
 .carousel-slide:hover img {
@@ -1816,42 +1789,16 @@ footer { padding: 20px; background-color: #6B7C59; color: white; font-family: 'P
 }
 
 .carousel-btn-prev {
-    left: 15px;
+    left: 8px; /* Closer to edge */
 }
 
 .carousel-btn-next {
-    right: 15px;
+    right: 8px; /* Closer to edge */
 }
 
-/* Dots indicator */
+/* Dots indicator - HIDDEN */
 .carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 20px;
-    padding: 0 20px;
-}
-
-.carousel-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    border: 1px solid rgba(107, 124, 89, 0.3); /* Subtle border */
-    background: rgba(107, 124, 89, 0.2); /* More transparent */
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.carousel-dot.active {
-    background: rgba(107, 124, 89, 0.8);
-    border-color: rgba(107, 124, 89, 0.6);
-    transform: scale(1.3);
-    box-shadow: 0 0 8px rgba(107, 124, 89, 0.3); /* Subtle glow */
-}
-
-.carousel-dot:hover {
-    background: rgba(139, 154, 122, 0.6);
-    border-color: rgba(139, 154, 122, 0.4);
+    display: none; /* Hide dots completely */
 }
 
 /* Desktop gallery - keep original styles but wrap in desktop-gallery class */
@@ -1901,7 +1848,14 @@ footer { padding: 20px; background-color: #6B7C59; color: white; font-family: 'P
     
     .guest-divison {
         height: auto !important; /* Override fixed height */
-        padding: 40px 0;
+        padding: 0; /* No padding at all */
+        margin: 0; /* No margins */
+        width: 100vw; /* Full viewport width */
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
     }
     
     /* Adjust carousel for smaller screens */
@@ -1916,17 +1870,25 @@ footer { padding: 20px; background-color: #6B7C59; color: white; font-family: 'P
     }
     
     .carousel-btn-prev {
-        left: 10px;
+        left: 5px; /* Even closer on tablets */
     }
     
     .carousel-btn-next {
-        right: 10px;
+        right: 5px; /* Even closer on tablets */
     }
 }
 
 @media (max-width: 480px) {
     .carousel-slide {
         height: 380px; /* Increased from 300px */
+    }
+    
+    .carousel-container {
+        width: 100%; /* Full width on small screens */
+    }
+    
+    .mobile-carousel {
+        padding: 5px 0; /* Minimal padding on small screens */
     }
     
     .carousel-btn {
@@ -1936,19 +1898,12 @@ footer { padding: 20px; background-color: #6B7C59; color: white; font-family: 'P
     }
     
     .carousel-btn-prev {
-        left: 8px;
+        left: 3px; /* Almost at the edge */
     }
     
     .carousel-btn-next {
-        right: 8px;
+        right: 3px; /* Almost at the edge */
     }
     
-    .carousel-dots {
-        margin-top: 15px;
-    }
-    
-    .carousel-dot {
-        width: 6px;
-        height: 6px;
-    }
+    /* Dots removed - no longer needed */
 }
