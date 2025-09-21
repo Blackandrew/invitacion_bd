@@ -86,7 +86,19 @@
     "passes": 0,
     "mesa": 3,
     "invitado": "Maria Calero"
-     }
+     },
+     {
+      "name": "Jerry Cano",
+      "passes": 0,
+      "mesa": 3,
+      "invitado": "Maria Calero"
+       }
+      , {
+        "name": "Roberto Casanova",
+        "passes": 0,
+        "mesa": 3,
+        "invitado": ""
+         }
      ,{
     "name": "Oscar Bonilla",
     "passes": 0,
@@ -106,7 +118,7 @@
     "invitado": ""
      }
      ,{
-    "name": "joaquin Mayorga",
+    "name": "Joaquin Mayorga",
     "passes": 0,
     "mesa": 3,
     "invitado": "Lilieth Jimenez"
@@ -148,7 +160,7 @@
     "invitado": "Francisco Cruz"
      }
      ,{
-    "name": "Nayeli Godoy",
+    "name": "Nayeli Davila",
     "passes": 0,
     "mesa": 5,
     "invitado": ""
