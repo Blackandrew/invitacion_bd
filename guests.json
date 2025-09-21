@@ -93,12 +93,12 @@
       "mesa": 3,
       "invitado": "Maria Calero"
        }
-      , {
-        "name": "Roberto Casanova",
+  , {
+       "name": "Roberto Casanova",
         "passes": 0,
         "mesa": 3,
         "invitado": ""
-         }
+       }
      ,{
     "name": "Oscar Bonilla",
     "passes": 0,
@@ -136,7 +136,7 @@
     "invitado": "Diana Aguirre"
      }
      ,{
-    "name": "Martin Mejilla",
+    "name": "Martin Mejia",
     "passes": 0,
     "mesa": 4,
     "invitado": "Brenda Herrera"
