@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const phoneNumber = '+50588174264'; 
         
         // Creamos el mensaje personalizado con el nombre del invitado.
-        const rawMessage = `¡Hola! Soy ${guest.name} y me gustaría confirmar mi asistencia (${passesText}) a la boda. ¡Muchas gracias!`;
+        const rawMessage = `¡Hola! Soy ${guest.name} y me gustaría confirmar mi asistencia a la boda. ¡Muchas gracias!`;
         
         // Codificamos el mensaje para que funcione correctamente en una URL (convierte espacios a %20, etc.)
         const encodedMessage = encodeURIComponent(rawMessage);
