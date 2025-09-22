@@ -172,6 +172,12 @@
     "invitado": ""
      }
      ,{
+      "name": "Rafael Hidalgo",
+      "passes": 0,
+      "mesa": 5,
+      "invitado": "Iveth de Hidalgo"
+       }
+     ,{
     "name": "Fabiola Garcia",
     "passes": 0,
     "mesa": 5,
