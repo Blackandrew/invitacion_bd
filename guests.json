@@ -1,16 +1,5 @@
 [
   {
-    "name": "Emilio Morales",
-    "passes": 0,
-    "mesa": 7
-  },
-  {
-    "name": "Hazel Espinoza",
-    "passes": 0,
-    "mesa": 7,
-    "invitado": "Steven Monterrey"
-  },
-  {
     "name": "Karen Montenegro",
     "passes": 0,
     "mesa": 1,
@@ -39,265 +28,268 @@
     "passes": 0,
     "mesa": 1,
     "invitado": ""
-  },{
+  },
+  {
     "name": "Erika Mendez",
     "passes": 0,
     "mesa": 1,
     "invitado": ""
-  }
-  ,{
-    "name": "Kevin Marquez",
-    "passes": 0,
-    "mesa": 2,
-    "invitado": "Ana Chavez"
-     }
- ,{
-    "name": "Rodolfo Gutierrez",
-    "passes": 0,
-    "mesa": 2,
-    "invitado": "Anelly Guzman"
-     }
- ,{
-    "name": "Jackson Sanchez",
-    "passes": 0,
-    "mesa": 2,
-    "invitado": ""
-     }
-     ,{
+  },
+  {
     "name": "Xavi Hernandez",
     "passes": 0,
     "mesa": 2,
     "invitado": ""
-     }
-     ,{
+  },
+  {
     "name": "Elizabeth Urbina",
     "passes": 0,
     "mesa": 2,
     "invitado": "Jose Real"
-     }
-     ,{
+  },
+  {
     "name": "Siul Urbina",
     "passes": 0,
     "mesa": 2,
     "invitado": ""
-     }
-     ,{
+  },
+  {
     "name": "Edigson Morales",
     "passes": 0,
     "mesa": 2,
     "invitado": ""
-     }
-     ,{
+  },
+  {
+    "name": "Dorian Blanco",
+    "passes": 0,
+    "mesa": 2,
+    "invitado": "Maria Bojorge"
+  },
+  {
+    "name": "Joaquin Mayorga",
+    "passes": 0,
+    "mesa": 2,
+    "invitado": "Lilieth Jimenez"
+  },
+  {
     "name": "Jerry Cano",
     "passes": 0,
     "mesa": 3,
     "invitado": "Maria Calero"
-     },
-     {
-      "name": "Maria Calero",
-      "passes": 0,
-      "mesa": 3,
-      "invitado": "Jerry Cano"
-       }
-  , {
-       "name": "Roberto Casanova",
-        "passes": 0,
-        "mesa": 3,
-        "invitado": ""
-       }
-     ,{
+  },
+  {
+    "name": "Maria Calero",
+    "passes": 0,
+    "mesa": 3,
+    "invitado": "Jerry Cano"
+  },
+  {
+    "name": "Roberto Casanova",
+    "passes": 0,
+    "mesa": 3,
+    "invitado": ""
+  },
+  {
     "name": "Oscar Bonilla",
     "passes": 0,
     "mesa": 3,
     "invitado": "Kendy Pastora"
-     }
-     ,{
-    "name": "Dorian Blanco",
+  },
+  {
+    "name": "Kevin Marquez",
     "passes": 0,
     "mesa": 3,
-    "invitado": "Maria Bojorge"
-     }
-     ,{
+    "invitado": "Ana Chavez"
+  },
+  {
     "name": "Helmut Colindres",
     "passes": 0,
     "mesa": 3,
     "invitado": ""
-     }
-     ,{
-    "name": "Joaquin Mayorga",
+  },
+  {
+    "name": "Jackson Sanchez",
     "passes": 0,
     "mesa": 3,
-    "invitado": "Lilieth Jimenez"
-     }
-     ,{
-    "name": "Vanelly Potoy",
-    "passes": 0,
-    "mesa": 4,
-    "invitado": "Ernesto Cruz"
-     }
-     ,{
+    "invitado": ""
+  },
+  {
     "name": "Francisco Cruz",
     "passes": 0,
     "mesa": 4,
-    "invitado": "Diana Aguirre"
-     }
-     ,{
+    "invitado": ""
+  },
+  {
     "name": "Martin Mejia",
     "passes": 0,
     "mesa": 4,
     "invitado": "Brenda Herrera"
-     }
-     ,{
+  },
+  {
     "name": "Kelly Acevedo",
     "passes": 0,
     "mesa": 4,
     "invitado": ""
-     }
-     ,{
-    "name": "Loana Montenegro",
+  },
+  {
+    "name": "Byron Murillo",
+    "passes": 0,
+    "mesa": 4,
+    "invitado": "Jennyfer Quintana"
+  },
+  {
+    "name": "Byron Treminio",
+    "passes": 0,
+    "mesa": 4,
+    "invitado": "Izayana Lopez"
+  },
+  {
+    "name": "Eddy Baltodano",
     "passes": 0,
     "mesa": 4,
     "invitado": ""
-     }
-     ,{
-    "name": "Francela Godoy",
+  },
+  {
+    "name": "Fernanda Valverde",
     "passes": 0,
     "mesa": 4,
-    "invitado": "David Alarcon"
-     }
-     ,{
+    "invitado": ""
+  },
+  {
     "name": "Nayeli Davila",
     "passes": 0,
     "mesa": 5,
     "invitado": ""
-     }
-     ,{
+  },
+  {
     "name": "Ana Gutierrez",
     "passes": 0,
     "mesa": 5,
     "invitado": ""
-     }
-     ,{
-      "name": "Rafael Hidalgo",
-      "passes": 0,
-      "mesa": 5,
-      "invitado": "Iveth de Hidalgo"
-       }
-     ,{
+  },
+  {
+    "name": "Rafael Hidalgo",
+    "passes": 0,
+    "mesa": 5,
+    "invitado": "Iveth de Hidalgo"
+  },
+  {
     "name": "Fabiola Garcia",
     "passes": 0,
     "mesa": 5,
     "invitado": "Brectt Ruiz"
-     }
-     ,{
+  },
+  {
     "name": "Damaris Calero",
     "passes": 0,
     "mesa": 5,
     "invitado": ""
-     }
-     ,{
+  },
+  {
     "name": "Norma Molina",
     "passes": 0,
     "mesa": 5,
     "invitado": ""
-     }
-     ,{
+  },
+  {
     "name": "Clelia Canales",
     "passes": 0,
     "mesa": 5,
     "invitado": "Norlan Arana"
-     }
-     ,{
-    "name": "Byron Murillo",
+  },
+  {
+    "name": "Vanelly Potoy",
     "passes": 0,
     "mesa": 6,
-    "invitado": "Jennyfer Quintana"
-     }
-     ,{
-    "name": "Byron Treminio",
-    "passes": 0,
-    "mesa": 6,
-    "invitado": "Izayana Lopez"
-     }
-     ,{
+    "invitado": "Ernesto Cruz"
+  },
+  {
     "name": "Francisco Gutierrez",
     "passes": 0,
     "mesa": 6,
     "invitado": "Mònica Bone"
-     }
-     ,{
-    "name": "Eddy Baltodano",
+  },
+  {
+    "name": "Rodolfo Gutierrez",
+    "passes": 0,
+    "mesa": 6,
+    "invitado": "Anelly Guzman"
+  },
+  {
+    "name": "Loana Montenegro",
     "passes": 0,
     "mesa": 6,
     "invitado": ""
-     }
-     ,{
-    "name": "Fernanda Valverde",
+  },
+  {
+    "name": "Francela Godoy",
     "passes": 0,
     "mesa": 6,
-    "invitado": ""
-     }
-     ,{
+    "invitado": "David Alarcon"
+  },
+  {
     "name": "Yoselyn Sandoval",
     "passes": 0,
     "mesa": 6,
     "invitado": ""
-     }
-     ,{
+  },
+  {
     "name": "Litzy Casaya",
     "passes": 0,
     "mesa": 7,
     "invitado": ""
-     }
-     ,{
+  },
+  {
     "name": "Casaya",
     "passes": 0,
     "mesa": 7,
     "invitado": ""
-     }
-     ,{
+  },
+  {
     "name": "Sandoval Casaya",
     "passes": 0,
     "mesa": 7,
     "invitado": "Familia"
-     }
-     ,{
+  },
+  {
     "name": "Starling Solis",
     "passes": 0,
     "mesa": 7,
     "invitado": "Familia"
-     }
-     ,{
+  },
+  {
     "name": "Darling Solis",
     "passes": 0,
     "mesa": 7,
     "invitado": "Familia"
-     }
-     ,{
+  },
+  {
     "name": "Lenin Solis",
     "passes": 0,
     "mesa": 7,
     "invitado": "Claudia Martinez"
-     }    
-     ,{
+  },
+  {
     "name": "Wesly Solis",
     "passes": 0,
     "mesa": 7,
     "invitado": ""
-     }    
-     ,{
-      "name": "Juli sanchez",
-      "passes": 0,
-      "mesa": 7,
-      "invitado": ""
-       }    
-  
-
-     
-
-     
-     
-
-
-     
+  },
+  {
+    "name": "Juli sanchez",
+    "passes": 0,
+    "mesa": 7,
+    "invitado": ""
+  },
+  {
+    "name": "Emilio Morales",
+    "passes": 0,
+    "mesa": 7
+  },
+  {
+    "name": "Hazel Espinoza",
+    "passes": 0,
+    "mesa": 7,
+    "invitado": "Steven Monterrey"
+  }
 ]

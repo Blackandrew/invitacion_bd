@@ -18,15 +18,25 @@ document.addEventListener('DOMContentLoaded', () => {
             errorMessage.textContent = 'El sistema de invitaciones no está disponible momentáneamente.';
         });
 
+    // Función para normalizar texto y quitar acentos
+    const normalizeText = (text) => {
+        return text.normalize('NFD')
+                  .replace(/[\u0300-\u036f]/g, '') // Elimina diacríticos
+                  .toLowerCase();
+    };
+
     // 2. Buscar al invitado y mostrar la invitación
     const findAndDisplayInvitation = () => {
-        const query = searchInput.value.trim().toLowerCase();
+        const query = searchInput.value.trim();
         if (!query) {
             errorMessage.textContent = 'Por favor, introduce tu nombre.';
             return;
         }
 
-        const foundGuest = guests.find(guest => guest.name.toLowerCase() === query);
+        const normalizedQuery = normalizeText(query);
+        const foundGuest = guests.find(guest => 
+            normalizeText(guest.name) === normalizedQuery
+        );
 
         if (foundGuest) {
             personalizeInvitation(foundGuest);
