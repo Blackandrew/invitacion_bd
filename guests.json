@@ -60,12 +60,6 @@
     "invitado": ""
   },
   {
-    "name": "Dorian Blanco",
-    "passes": 0,
-    "mesa": 2,
-    "invitado": "Maria Bojorge"
-  },
-  {
     "name": "Joaquin Mayorga",
     "passes": 0,
     "mesa": 2,
@@ -102,36 +96,6 @@
     "invitado": "Ana Chavez"
   },
   {
-    "name": "Helmut Colindres",
-    "passes": 0,
-    "mesa": 3,
-    "invitado": ""
-  },
-  {
-    "name": "Jackson Sanchez",
-    "passes": 0,
-    "mesa": 3,
-    "invitado": ""
-  },
-  {
-    "name": "Francisco Cruz",
-    "passes": 0,
-    "mesa": 4,
-    "invitado": ""
-  },
-  {
-    "name": "Martin Mejia",
-    "passes": 0,
-    "mesa": 4,
-    "invitado": "Brenda Herrera"
-  },
-  {
-    "name": "Kelly Acevedo",
-    "passes": 0,
-    "mesa": 4,
-    "invitado": ""
-  },
-  {
     "name": "Byron Murillo",
     "passes": 0,
     "mesa": 4,
@@ -154,6 +118,12 @@
     "passes": 0,
     "mesa": 4,
     "invitado": ""
+  },
+  {
+    "name": "Aldo Otero",
+    "passes": 0,
+    "mesa": 4,
+    "invitado": "Diana Dolmuz"
   },
   {
     "name": "Nayeli Davila",
@@ -192,16 +162,16 @@
     "invitado": ""
   },
   {
+    "name": "Mariam  Lezama",
+    "passes": 0,
+    "mesa": 5,
+    "invitado": ""
+  },
+  {
     "name": "Clelia Canales",
     "passes": 0,
     "mesa": 5,
     "invitado": "Norlan Arana"
-  },
-  {
-    "name": "Vanelly Potoy",
-    "passes": 0,
-    "mesa": 6,
-    "invitado": "Ernesto Cruz"
   },
   {
     "name": "Francisco Gutierrez",
@@ -216,19 +186,19 @@
     "invitado": "Anelly Guzman"
   },
   {
-    "name": "Loana Montenegro",
+    "name": "Dorian Blanco",
+    "passes": 0,
+    "mesa": 6,
+    "invitado": "Maria Bojorge"
+  },
+  {
+    "name": "Helmut Colindres",
     "passes": 0,
     "mesa": 6,
     "invitado": ""
   },
   {
-    "name": "Francela Godoy",
-    "passes": 0,
-    "mesa": 6,
-    "invitado": "David Alarcon"
-  },
-  {
-    "name": "Yoselyn Sandoval",
+    "name": "Jackson Sanchez",
     "passes": 0,
     "mesa": 6,
     "invitado": ""
@@ -254,31 +224,31 @@
   {
     "name": "Starling Solis",
     "passes": 0,
-    "mesa": 7,
+    "mesa": 8,
     "invitado": "Familia"
   },
   {
     "name": "Darling Solis",
     "passes": 0,
-    "mesa": 7,
+    "mesa": 8,
     "invitado": "Familia"
   },
   {
     "name": "Lenin Solis",
     "passes": 0,
-    "mesa": 7,
+    "mesa": 8,
     "invitado": "Claudia Martinez"
   },
   {
     "name": "Wesly Solis",
     "passes": 0,
-    "mesa": 7,
+    "mesa": 8,
     "invitado": ""
   },
   {
     "name": "Juli sanchez",
     "passes": 0,
-    "mesa": 7,
+    "mesa": 8,
     "invitado": ""
   },
   {
@@ -291,5 +261,47 @@
     "passes": 0,
     "mesa": 7,
     "invitado": "Steven Monterrey"
+  },
+  {
+    "name": "Francisco Cruz",
+    "passes": 0,
+    "mesa": 9,
+    "invitado": ""
+  },
+  {
+    "name": "Martin Mejia",
+    "passes": 0,
+    "mesa": 9,
+    "invitado": "Brenda Herrera"
+  },
+  {
+    "name": "Kelly Acevedo",
+    "passes": 0,
+    "mesa": 9,
+    "invitado": ""
+  },
+  {
+    "name": "Loana Montenegro",
+    "passes": 0,
+    "mesa": 9,
+    "invitado": ""
+  },
+  {
+    "name": "Francela Godoy",
+    "passes": 0,
+    "mesa": 9,
+    "invitado": "David Alarcon"
+  },
+  {
+    "name": "Yoselyn Sandoval",
+    "passes": 0,
+    "mesa": 9,
+    "invitado": ""
+  },
+  {
+    "name": "Vanelly Potoy",
+    "passes": 0,
+    "mesa": 9,
+    "invitado": "Ernesto Cruz"
   }
 ]
